@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import Domain.Dto.MovieDto;
 import Domain.Service.MovieService;
 import Domain.Service.MovieServiceImpl;
@@ -16,7 +19,7 @@ public class MovieController implements SubController {
 		service = MovieServiceImpl.getInstance();
 	}
 
-	//1 Select , 2 Insert , 3 Update , 4 Delete
+	//1 Select , 2 Insert , 3 Update , 4 Delete, 5 DayUpdate
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		
 		if(serviceNo == 1) {
@@ -32,10 +35,10 @@ public class MovieController implements SubController {
 			return result;
 		
 		} else if(serviceNo == 2) {
-			Integer MovieCd = (int) param.get("MovieCd");
+			Integer MovieCd = (Integer) param.get("MovieCd");
 			String MovieNm = (String) param.get("MovieNm");
 			String MovieOp = (String) param.get("MovieOp");
-			Double MovieTn = (double) param.get("MovieTn");
+			Double MovieTn = (Double) param.get("MovieTn");
 			String MovieGs = (String) param.get("MovieGs");
 			String MovieOv = (String) param.get("MovieOv");
 			String MoviePo = (String) param.get("MoviePo");
@@ -61,10 +64,10 @@ public class MovieController implements SubController {
 			return result;
 			
 		}else if(serviceNo == 3 ) {
-			Integer MovieCd = (int) param.get("MovieCd");
+			Integer MovieCd = (Integer) param.get("MovieCd");
 			String MovieNm = (String) param.get("MovieNm");
 			String MovieOp = (String) param.get("MovieOp");
-			Double MovieTn = (double) param.get("MovieTn");
+			Double MovieTn = (Double) param.get("MovieTn");
 			String MovieGs = (String) param.get("MovieGs");
 			String MovieOv = (String) param.get("MovieOv");
 			String MoviePo = (String) param.get("MoviePo");

@@ -10,25 +10,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Controller.auth.AuthAddController;
-import Controller.auth.AuthDeleteController;
-import Controller.auth.AuthSearchController;
-import Controller.auth.AuthUpdateController;
+import Controller.auth.LoginController;
+import Controller.auth.LogoutController;
 import Controller.member.MemberAddController;
 import Controller.member.MemberDeleteController;
 import Controller.member.MemberSearchController;
 import Controller.member.MemberUpdateController;
+import Controller.member.interest.InterestAddController;
+import Controller.member.interest.InterestDeleteController;
+import Controller.member.interest.InterestSearchController;
+import Controller.member.interest.InterestUpdateController;
 import Controller.movie.MovieAddController;
 import Controller.movie.MovieDeleteController;
 import Controller.movie.MovieSearchController;
 import Controller.movie.MovieUpdateController;
 
-public class FrontController extends HttpServlet{
+public class FrontController extends HttpServlet {
 	
 	private Map<String, SubController> map = new HashMap();
 	//초기값
 	//사용자요구사항 API Controller에 저장
 	
+	@Override
 	public void init(ServletConfig config) throws ServletException{
 		
 		String projectPath = config.getServletContext().getContextPath();
@@ -45,13 +48,21 @@ public class FrontController extends HttpServlet{
 		map.put(projectPath+"/member/update.do", new MemberUpdateController());
 		map.put(projectPath+"/member/delete.do", new MemberDeleteController());
 		
+		//member.interest
+		map.put(projectPath+"/interest/search.do", new InterestSearchController());
+		map.put(projectPath+"/interest/add.do", new InterestAddController());
+		map.put(projectPath+"/interest/update.do", new InterestUpdateController());
+		map.put(projectPath+"/interest/delete.do", new InterestDeleteController());
+		
 		//auth
-		map.put(projectPath+"/auth/search.do", new AuthSearchController());
-		map.put(projectPath+"/auth/add.do", new AuthAddController());
-		map.put(projectPath+"/auth/update.do", new AuthUpdateController());
-		map.put(projectPath+"/auth/delete.do", new AuthDeleteController());
+		map.put(projectPath+"/auth/login.do", new LoginController());
+		map.put(projectPath+"/auth/logout.do", new LogoutController());
+		
+		//main
+		map.put(projectPath+"/main.do", new MainController());
+		
 	}
-
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -60,17 +71,5 @@ public class FrontController extends HttpServlet{
 		controller.execute(req,resp);
 		
 	}
-
-   
-
-	//request에 맞는 controller를 추출, 컨트롤러 실행
-	//request, ServiceNo(1 select, 2 insert, 3 update, 4 delete), param
-	public Map<String, Object> execute(String request, int ServiceNo, Map<String, Object> param){
-		SubController controller = map.get(request);
-		
-		Map<String, Object> result = new HashMap();
-		result = controller.execute(ServiceNo, param);
-		return result;
-	}
-
+	
 }

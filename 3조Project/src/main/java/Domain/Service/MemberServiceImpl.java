@@ -42,7 +42,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//회원 조회하기(전체) - 사서
 		@Override
-		public List<MemberDto> memberSearch(String sid) throws Exception {  //테스트 통과 ok
+		public List<MemberDto> memberSearchList(String sid) throws Exception {  //테스트 통과 ok
 			String role = authService.getRole(sid);
 			if(role.equals("ROLE_MEMBER")) 
 				return dao.select();
@@ -50,7 +50,8 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//회원 조회하기(한명) - 사서
 		@Override
-		public MemberDto memberSearchOne(String role, String id) throws Exception {
+		public MemberDto memberSearchOne(String sid, String id) throws Exception {
+			String role = authService.getRole(sid);
 			if(role.equals("ROLE_MEMBER")) 
 				return dao.select(id);
 			return null;
@@ -88,7 +89,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		//관심 등록
 		@Override
-		public boolean ImoiveJoin(InterestDto dto, String sid) throws Exception {
+		public boolean ImovieJoin(InterestDto dto, String sid) throws Exception {
 			System.out.println("MemberService's addInterest()");
 			String role = authService.getRole(sid);
 			if(role.equals("ROLE_MEMBER") || role.equals("ROLE_USER")) {
@@ -100,28 +101,29 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//관심 조회하기(전체)
 		@Override
-		public List<InterestDto> ImoiveSearch(String sid) throws Exception {
+		public List<InterestDto> ImovieSearchList(String sid) throws Exception {
 			String role = authService.getRole(sid);
 			if(role.equals("ROLE_MEMBER")) 
 				return Idao.select();
 			return null;
 		}//관심 조회하기(한명) - 직원
 		@Override
-		public InterestDto ImoiveSearchOne(String role, int interestCd, String id) throws Exception {
-			if(role.equals("ROLE_MEMBER"))
+		public InterestDto ImovieSearchOne(String sid, int interestCd, String id) throws Exception {
+			String role = authService.getRole(sid);
+			if(role.equals("ROLE_MEMBER")) 
 				return Idao.select(interestCd, id);
 			return null;
 		}
 		//관심 조회하기(한 회원) - 로그인한 회원
 		@Override
-		public InterestDto ImoiveSearch(int interestCd, String id, String sid) throws Exception {
+		public InterestDto ImovieSearch(int interestCd, String id, String sid) throws Exception {
 			Session session = sessionMap.get(sid);
 			if(session != null && session.getId().equals(id)) 
 				return Idao.select(interestCd, id);
 			return null;
 		}//관심 수정하기 - 본인확인
 		@Override
-		public boolean ImoiveUpdate(InterestDto dto, String sid) throws Exception {
+		public boolean ImovieUpdate(InterestDto dto, String sid) throws Exception {
 			Session session = sessionMap.get(sid);
 			if(session != null && session.getId().equals(dto.getId())) {
 				int result = Idao.update(dto);
@@ -132,7 +134,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//관심 삭제하기
 		@Override
-		public boolean ImoiveDelete(int interestCd, String id, String sid) throws Exception {
+		public boolean ImovieDelete(int interestCd, String id, String sid) throws Exception {
 			Session session = sessionMap.get(sid);
 			if(session != null && session.getId().equals(id)) {
 				int result = Idao.delete(interestCd, id);

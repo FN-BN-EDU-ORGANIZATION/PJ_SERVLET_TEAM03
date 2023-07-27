@@ -5,6 +5,7 @@ import java.util.Map;
 
 import Domain.Service.AuthService;
 import Domain.Service.AuthServiceImpl;
+import Domain.Service.Session;
 
 public class AuthController implements SubController {
 	
@@ -13,7 +14,7 @@ public class AuthController implements SubController {
 	public AuthController() {
 		service = AuthServiceImpl.getInstance();
 	}
-
+	// 1 login, 2 logout
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		if (serviceNo == 1) {
 			String id = (String) param.get("id");
@@ -30,6 +31,26 @@ public class AuthController implements SubController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			return result;
+		}else if(serviceNo == 2) {
+			String id = (String) param.get("id");
+			String sid = (String)param.get("sid");
+			
+			if(id == null || sid == null) {
+				System.out.println("[ERROR] Data Validation Check Error!");
+				return null;
+			}
+			
+			Boolean rValue = false;
+			try {
+				rValue = service.logout(id, sid);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			// view로 전달
+			System.out.println("Member_Logout Block!");
+			Map<String, Object> result = new HashMap();
+			result.put("result", rValue);
 			return result;
 		}
 		return null;

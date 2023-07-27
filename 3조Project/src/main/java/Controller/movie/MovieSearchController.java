@@ -1,9 +1,12 @@
 package Controller.movie;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import Controller.SubController;
 import Domain.Dto.MovieDto;
@@ -27,6 +30,11 @@ public class MovieSearchController implements SubController{
 			//java -> json 변환
 			ObjectMapper objectMapper = new ObjectMapper();
 			String jsonConverted = objectMapper.writeValueAsString(list);
+			
+			//view로 전달
+			resp.setContentType("application/json");
+			PrintWriter out = resp.getWriter();
+			out.print(jsonConverted);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

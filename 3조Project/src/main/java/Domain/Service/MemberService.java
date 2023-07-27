@@ -11,10 +11,10 @@ public interface MemberService {
 	boolean memberJoin(MemberDto dto) throws Exception;
 
 	//회원 조회하기(전체) - 사서
-	List<MemberDto> memberSearch(String sid) throws Exception;
+	List<MemberDto> memberSearchList(String sid) throws Exception;
 
 	//회원 조회하기(한명) - 사서
-	MemberDto memberSearchOne(String role, String id) throws Exception;
+	MemberDto memberSearchOne(String sid, String id) throws Exception;
 
 	//회원 조회하기(한 회원) - 로그인한 회원
 	MemberDto memberSearch(String id, String sid) throws Exception;
@@ -26,19 +26,21 @@ public interface MemberService {
 	boolean memberDelete(String id, String sid) throws Exception;
 
 	//관심 등록
-	boolean ImoiveJoin(InterestDto dto, String sid) throws Exception;
+	boolean ImovieJoin(InterestDto dto, String sid) throws Exception;
 
-	//관심 조회하기(전체)
-	List<InterestDto> ImoiveSearch(String sid) throws Exception;//관심 조회하기(한명) - 직원
-
-	InterestDto ImoiveSearchOne(String role, int interestCd, String id) throws Exception;
+	//관심 조회하기(전체 회원) - 직원
+	List<InterestDto> ImovieSearchList(String sid) throws Exception;
+	
+	//관심 조회하기(한 회원) - 직원
+	InterestDto ImovieSearchOne(String sid, int interestCd, String id) throws Exception;
 
 	//관심 조회하기(한 회원) - 로그인한 회원
-	InterestDto ImoiveSearch(int interestCd, String id, String sid) throws Exception;//관심 수정하기 - 본인확인
-
-	boolean ImoiveUpdate(InterestDto dto, String sid) throws Exception;
+	InterestDto ImovieSearch(int interestCd, String id, String sid) throws Exception;
+	
+	//관심 수정하기 - 본인확인
+	boolean ImovieUpdate(InterestDto dto, String sid) throws Exception;
 
 	//관심 삭제하기
-	boolean ImoiveDelete(int interestCd, String id, String sid) throws Exception;
+	boolean ImovieDelete(int interestCd, String id, String sid) throws Exception;
 
 }
