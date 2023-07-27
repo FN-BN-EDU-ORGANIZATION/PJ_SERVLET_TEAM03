@@ -55,8 +55,8 @@ public class FrontController extends HttpServlet {
 		map.put(projectPath+"/interest/delete.do", new InterestDeleteController());
 		
 		//auth
-		map.put(projectPath+"/auth/login.do", new LoginController());
-		map.put(projectPath+"/auth/logout.do", new LogoutController());
+		map.put(projectPath+"/login.do", new LoginController());
+		map.put(projectPath+"/logout.do", new LogoutController());
 		
 		//main
 		map.put(projectPath+"/main.do", new MainController());

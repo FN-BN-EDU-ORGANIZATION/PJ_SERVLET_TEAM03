@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.SubController;
+import Domain.Service.MemberService;
+import Domain.Service.MemberServiceImpl;
 
 public class LoginController implements SubController {
+	
+	private MemberService service = MemberServiceImpl.getInstance();
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -27,6 +31,37 @@ public class LoginController implements SubController {
 			}
 			return ;
 		}
+		
+		
+		//POST 처리
+		String id = req.getParameter("id");
+		String pw = req.getParameter("pw");
+		System.out.println("LoginController parameters : " + id+ " " + pw);
+		
+		try {
+			if (id.isEmpty() || pw.isEmpty()) {
+				System.out.println("[ERROR] Data Validation Check Error!");
+				req.setAttribute("msg", "[ERROR] ID나 PW가 공백입니다.");
+				req.getRequestDispatcher("/WEB-INF/view/member/auth/login.jsp").forward(req, resp);
+				return ;
+			}
+			boolean isLogin=false;
+			isLogin=service.login(req);
+			if(isLogin)
+			{
+				//main.do 이동 - Redirect
+				resp.sendRedirect(req.getContextPath()+"/main.do");
+			}
+			else
+			{
+				//login.do 이동 - Forward
+				req.getRequestDispatcher("/WEB-INF/view/member/auth/login.jsp").forward(req, resp);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
 		
 	}

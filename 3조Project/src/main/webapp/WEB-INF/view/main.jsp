@@ -12,10 +12,10 @@
 <h1>MAIN</h1>
 <hr />
 <c:if test="${empty ROLE}">
-	<a href="${pageContext.request.contextPath}/login.do"  >LOGIN</a></br>
+	<a href="${pageContext.request.contextPath}/login.do"  >LOGIN</a><br/>
 </c:if>
 <c:if test="${not empty ROLE}">
-	<a href="${pageContext.request.contextPath}/logout.do" > >LOGOUT</a></br>
+	<a href="${pageContext.request.contextPath}/logout.do" > >LOGOUT</a><br/>
 </c:if>
 
 </body>

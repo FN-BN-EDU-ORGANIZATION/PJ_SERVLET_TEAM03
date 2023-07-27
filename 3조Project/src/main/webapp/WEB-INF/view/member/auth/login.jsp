@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<h1>LOGIN</h1>
+<h1>LOGIN PAGE</h1>
 <form action="" method="post">
-	ID : <input type="id" /><br/>
-	PW : <input type="pw" type="password" /><br/>
+	ID : <input name="id" /><br/>
+	PW : <input name="pw" type="password" /><br/>
 	<input type="submit" value="로그인" />
 </form>
 
