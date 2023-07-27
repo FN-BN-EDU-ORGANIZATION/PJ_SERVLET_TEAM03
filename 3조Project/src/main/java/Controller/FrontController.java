@@ -44,7 +44,7 @@ public class FrontController extends HttpServlet {
 		
 		//member
 		map.put(projectPath+"/member/search.do", new MemberSearchController());
-		map.put(projectPath+"/member/add.do", new MemberAddController());
+		map.put(projectPath+"/member/join.do", new MemberAddController()); 		//Join
 		map.put(projectPath+"/member/update.do", new MemberUpdateController());
 		map.put(projectPath+"/member/delete.do", new MemberDeleteController());
 		
@@ -61,6 +61,7 @@ public class FrontController extends HttpServlet {
 		//main
 		map.put(projectPath+"/main.do", new MainController());
 		
+		
 	}
 	
 	@Override
@@ -69,7 +70,7 @@ public class FrontController extends HttpServlet {
 		System.out.println("FrontController's service Uri : "+ req.getRequestURI());
 		SubController controller = map.get(req.getRequestURI());
 		controller.execute(req,resp);
-		
+		 
 	}
 	
 }

@@ -47,4 +47,5 @@ public interface MemberService {
 
 	boolean login(HttpServletRequest req) throws Exception;
 
+
 }

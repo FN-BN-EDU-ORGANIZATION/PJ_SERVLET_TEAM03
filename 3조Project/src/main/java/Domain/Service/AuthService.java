@@ -2,6 +2,8 @@ package Domain.Service;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 public interface AuthService {
 
 	//외부로부터 Service 받기
@@ -15,5 +17,7 @@ public interface AuthService {
 
 	//역할반환함수
 	String getRole(String sid);
+
+	boolean login(HttpServletRequest req) throws Exception;
 
 }

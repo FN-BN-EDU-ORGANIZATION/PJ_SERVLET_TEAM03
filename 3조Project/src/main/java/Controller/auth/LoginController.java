@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.SubController;
-import Domain.Service.MemberService;
-import Domain.Service.MemberServiceImpl;
+import Domain.Service.AuthService;
+import Domain.Service.AuthServiceImpl;
 
 public class LoginController implements SubController {
 	
-	private MemberService service = MemberServiceImpl.getInstance();
+	private AuthService service = AuthServiceImpl.getInstance();
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
