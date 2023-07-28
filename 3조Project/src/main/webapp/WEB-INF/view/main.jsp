@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="CSS/default.css" />
-<link rel="stylesheet" href="CSS/main.css" />
-<link rel="stylesheet" href="CSS/header.css" />
-<link rel="stylesheet" href="CSS/footer.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/default.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
 </head>
 <body>
 <%-- 
@@ -27,24 +27,24 @@
     <header>
         <div id="header_section" class="header">
             <h1 class="logo">
-                <a href="index.html"></a>
+                <a href="${pageContext.request.contextPath}/main.do"></a>
             </h1>
             <div class="gnb">
                 <ul class="menu1">
-                    <li><a href=""><img src="image/페이스북.png" alt="페이스북로고"></a></li>
-                    <li><a href="" style="width:35px"><img src="image/유튜브-removebg-preview.png" alt="유튜브로고"></a></li>
-                    <li><a href=""><img src="image/인스타그램.png" alt="인스타그램로고"></a></li>
+                    <li><a href=""><img src="resources/image/페이스북.png" alt="페이스북로고"></a></li>
+                    <li><a href="" style="width:35px"><img src="resources/image/유튜브-removebg-preview.png" alt="유튜브로고"></a></li>
+                    <li><a href=""><img src="resources/image/인스타그램.png" alt="인스타그램로고"></a></li>
                 </ul>
                 <ul class="menu2">
                     <li><a href="">멤버십</a></li>
                     <li><a href="">고객센터</a></li>
                     <li><a href="">단체관람/대관문의</a></li>
-                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
                 </ul>
                 <ul class="menu3">
-                    <li><a href="회원가입.html">회원가입</a></li>
+                    <li><a href="${pageContext.request.contextPath}/join.do">회원가입</a></li>
                     <li><a href="">바로예매</a></li>
-                    <li><a href=""><img src="image/햄버거버튼.png"></a></li>
+                    <li><a href=""><img src="resources/image/햄버거버튼.png"></a></li>
                 </ul>
                 <div class="nav">
                     <ul class="submenu">
@@ -107,6 +107,7 @@
                     </ul>
                 </div>
             </div>
+        </div>
     </header>
     <main>
         <div class="subsection">
@@ -116,7 +117,7 @@
                         <a href=""><img src="https://caching2.lottecinema.co.kr/lotte_image/2023/BIG/BIG_1920774.jpg" alt=""></a>
                     </div>
                     <div class="back">
-                        <a href=""><img src="image/메인화면2.jpg" alt=""></a>
+                        <a href=""><img src="resources/image/메인화면2.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -125,16 +126,16 @@
         <div class="contentslist">
             <div class="mainmovie swiper-container">
                 <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><a href=""><img src="image/분노의질주.jpg" alt="">분노의질주:라이드 오어 다이</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/가디언즈.jpg" alt="">가디언즈 오브 갤럭시:Volume 3</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/범죄도시.jpg" alt="">범죄도시3</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/슈퍼마리오.jpg" alt="">슈퍼마리오브라더스</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/빅트립2.jpg" alt="">빅트립2</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/더문.jpg" alt="">더문</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/엘리멘탈.jpg" alt="">엘리멘탈</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/미션.jpg" alt="">미션임파서블</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/코난.jpg" alt="">코난</a></li>
-                    <li class="swiper-slide"><a href=""><img src="image/밀수.jpg" alt="">밀수</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/분노의질주.jpg" alt="">분노의질주:라이드 오어 다이</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/가디언즈.jpg" alt="">가디언즈 오브 갤럭시:Volume 3</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/범죄도시.jpg" alt="">범죄도시3</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/슈퍼마리오.jpg" alt="">슈퍼마리오브라더스</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/빅트립2.jpg" alt="">빅트립2</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/더문.jpg" alt="">더문</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/엘리멘탈.jpg" alt="">엘리멘탈</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/미션.jpg" alt="">미션임파서블</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/코난.jpg" alt="">코난</a></li>
+                    <li class="swiper-slide"><a href=""><img src="resources/image/밀수.jpg" alt="">밀수</a></li>
                 </ul>
 
             </div>
@@ -144,9 +145,9 @@
     <div class="quick_section">
         <div class="quick_menu">
             <!-- 퀵메뉴 이미지 -->
-            <a href="#none"><img src="./image/961c9cbf311b4f1299827c21a61fab76.png" alt=""></a>
-            <a href="#none"><img src="./image/c1dbce4f91e948498c7c78239b7157ac.png" alt=""></a>
-            <a href="#none"><img src="./image/c793af89f3b648aa99cc679186ccfa02.png" alt=""></a>
+            <a href="#none"><img src="resources/image/961c9cbf311b4f1299827c21a61fab76.png" alt=""></a>
+            <a href="#none"><img src="resources/image/c1dbce4f91e948498c7c78239b7157ac.png" alt=""></a>
+            <a href="#none"><img src="resources/image/c793af89f3b648aa99cc679186ccfa02.png" alt=""></a>
             <!-- 최상단 올라가기 버튼 -->
             <a href="#none" class="quick_top" id="to_top">TOP</a>
         </div>
@@ -155,7 +156,7 @@
           <div class="left_section">
             <div class="left_banner">
               <!-- 광고 배너 이미지 -->
-              <a href=""><img src="./image/RUBYGILLMAN_145145.png" alt=""></a>
+              <a href=""><img src="resources/image/RUBYGILLMAN_145145.png" alt=""></a>
             </div>
             <!-- 광고 닫는 버튼 -->
             <button class="banner_close"></button>
@@ -164,7 +165,7 @@
         <div class="footer">
             <div class="inner">
                 <span class="footerlogo">
-                    <img src="image/logo3.png" alt="">
+                    <img src="resources/image/logo3.png" alt="">
                 </span>
                 <ul class="footermenu">
                     <li><a href="#" >이용약관</a></li>

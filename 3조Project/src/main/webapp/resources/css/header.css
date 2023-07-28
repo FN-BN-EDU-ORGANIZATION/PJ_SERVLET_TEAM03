@@ -94,7 +94,7 @@ header>.header>.gnb>.menu2{
     /* border:1px solid green; */
     line-height: 30px;
     font-size:12px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 header>.header>.gnb>.menu2>li{
     display:block;
@@ -118,9 +118,10 @@ header>.header>.gnb>.menu3{
     margin-right:-350px;
     width: 200px;
     height: 30px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     line-height: 30px;
     /* margin-right: 1px; */
+    z-index: 2;
 }
 header>.header>.gnb>.menu3>li{
     display:block;

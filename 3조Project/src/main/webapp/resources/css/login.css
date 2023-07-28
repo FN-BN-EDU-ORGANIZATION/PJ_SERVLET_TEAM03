@@ -26,7 +26,7 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
     height: 50px;
     border: none;
     border-bottom: 2px solid black;
-    margin-left: 230px;
+    margin-left: 430px;
     line-height: 50px;
     background-color: white;
     font-size: 15px;
@@ -41,7 +41,7 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
     height: 50px;
     border: none;
     border-bottom: 2px solid lightgray;
-    margin-left: 730px;
+    margin-left: 930px;
     line-height: 50px;
     background-color: white;
     font-size: 15px;

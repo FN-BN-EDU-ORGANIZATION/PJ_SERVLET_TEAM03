@@ -7,6 +7,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 public class UTF_8_Filter implements Filter{
 
@@ -19,7 +20,14 @@ public class UTF_8_Filter implements Filter{
 		
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html; charset=UTF-8");
+		
+		String requestURI = ((HttpServletRequest) req).getRequestURI();
+        if (requestURI.endsWith(".css")) {
+            resp.setContentType("text/css; charset=UTF-8");
+        } else {
+            resp.setContentType("text/html; charset=UTF-8");
+        }
+
 		
 		chain.doFilter(req, resp);
 		
