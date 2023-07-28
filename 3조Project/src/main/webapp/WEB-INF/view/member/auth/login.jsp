@@ -123,12 +123,12 @@
                         <p class="tip">
                           기능이 제한된 비회원으로도 로그인이 가능합니다.
                         </p>
-                        <form action="#" method="post">
+                        <form action="" method="post">
                           <div class="login-area">
                             <input type="text" id="userid" maxlength="30" placeholder="아이디를 입력해 주세요."required/>
                             <br/>
                             <input type="password" id="userpw" maxlength="20" placeholder="비밀번호를 입력해 주세요." required/>
-                            <button type="button" class="login-btn">로그인</button>
+                            <button type="submit" class="login-btn">로그인</button>
                           </div>
                         </form>
                         <div class="login-bot">

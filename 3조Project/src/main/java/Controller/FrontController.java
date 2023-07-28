@@ -61,6 +61,9 @@ public class FrontController extends HttpServlet {
 		//main
 		map.put(projectPath+"/main.do", new MainController());
 		
+		//user
+		map.put(projectPath+"/user.do", new UserController()); 
+		
 		
 	}
 	
