@@ -57,9 +57,9 @@ main>.subsection>.sub1>.sub2>.front>a{
     display:flex;
     transform: rotateY(180deg);
 }
-.sub1:hover .sub2{
+/*.sub1:hover .sub2{
     transform:rotateY(180deg);
-}
+}*/
 .contents{
     display:flex;
     border:1px solid;

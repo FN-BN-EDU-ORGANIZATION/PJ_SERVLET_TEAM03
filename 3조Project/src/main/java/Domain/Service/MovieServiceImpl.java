@@ -1,7 +1,8 @@
 package Domain.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import Domain.Dao.MovieDao;
 import Domain.Dao.MovieDaoImpl;
@@ -24,7 +25,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 	//영화 조회
 	@Override
-	public List<MovieDto> getAllMovie() throws Exception {  //테스트 구동 ok
+	public List<MovieDto> getAllMovie(HttpServletRequest req) throws Exception {  //테스트 구동 ok
 		System.out.println("MovieService's getAllMovie()");
 		return dao.select();
 	}

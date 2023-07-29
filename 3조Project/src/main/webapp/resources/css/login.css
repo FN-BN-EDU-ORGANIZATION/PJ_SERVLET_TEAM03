@@ -20,7 +20,7 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
 
 /* 회원 로그인 */
 /* 회원 비회원 창 */
-.login-contents>.login-main>.login-ul>.active>.tab-member-btn{
+.login-contents>.login-main>.login-ul>.active>.button>.tab-member-btn{
     position: absolute;
     width: 500px;
     height: 50px;
@@ -31,12 +31,12 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
     background-color: white;
     font-size: 15px;
 }
-.login-contents>.login-main>.login-ul>.active>.tab-member-btn>span {
+.login-contents>.login-main>.login-ul>.active>.button>.tab-member-btn>span {
     position: relative;
     vertical-align: top;
     white-space: nowrap;
 }
-.login-contents>.login-main>.login-ul>.active>.tab-nonmember-btn {
+.login-contents>.login-main>.login-ul>.active>.button>.tab-nonmember-btn {
     width: 500px;
     height: 50px;
     border: none;
@@ -51,6 +51,13 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
     vertical-align: top;
     white-space: nowrap;
 }
+/*.login-contents>.login-main>.login-ul>.active>.button{
+	justify-content: center;
+	display: flex;
+	
+	
+	
+}*/
 
 /* 로그인 위 설명 */
 .tip {

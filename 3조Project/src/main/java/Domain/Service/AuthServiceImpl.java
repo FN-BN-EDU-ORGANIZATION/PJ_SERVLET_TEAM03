@@ -66,11 +66,11 @@ public class AuthServiceImpl implements AuthService {
 		@Override
 		public boolean logout(HttpServletRequest req) throws Exception{
 			HttpSession session = req.getSession(true);
-			if(!session.getId().equals(id)) {
+			if(!session.getId().equals(req)) {
 				System.out.println("[ERROR] ID가 일치하지 않습니다.");
 				return false;
 			}
-			sessionMap.remove(sid);
+			sessionMap.remove(req);
 			return true;
 		}
 		

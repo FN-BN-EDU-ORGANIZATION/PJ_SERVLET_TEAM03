@@ -110,12 +110,14 @@
           <div class="login-main">
             <ul class="login-ul">
               <li class="active">
+              <div class="button">
                 <button type="button" class="tab-member-btn">
-                  <span>회원</span>
+                  <span class>회원</span>
                 </button>
                 <button type="button" class="tab-nonmember-btn">
                   <span>비회원</span>
                 </button>
+                </div>
                 <div class="tab_con">
                   <div class="login-member">
                     <div class="contents_inner">
