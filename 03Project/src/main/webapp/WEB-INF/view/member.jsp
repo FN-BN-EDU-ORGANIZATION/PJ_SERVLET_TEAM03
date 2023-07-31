@@ -101,92 +101,118 @@
             </div>
     </header>
 <!-- 메인 -->
-<h1>MEMBER PAGE</h1>
-<!-- 마이페이지 버튼 -->
+<!-- 마이페이지 -->
 <div class="mypage-warp">
     <div class="mypage">
+        <!-- 마이페이지 버튼들 -->
         <ul class="mypage-menu">
+            <!-- 정보 수정 -->
             <li>
                 <button class="tab-update">
-                    <span class="img"><img src="resources/image/ic_my_menu_1.png" alt=""></span>
+                    <span class="img"><img src="./image/ic_my_menu_1.png" alt=""></span>
                     <span class="myChange">회원 정보 변경</span>
                 </button>
             </li>
+            <!-- 탈퇴 -->
             <li>
                 <button class="tab-delete">
-                    <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
+                    <span class="img"><img src="./image/ic_my_menu_4.png" alt=""></span>
                     <span class="myChange2">회원 탈퇴</span>
                 </button>
             </li>
+            <!-- 정보 조회 -->
             <li>
                 <button class="tab-select">
-                    <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
+                    <span class="img"><img src="./image/ic_my_menu_5.png" alt=""></span>
                     <span class="myChange3">회원 정보 조회</span>
                 </button>
             </li>
         </ul>
     </div>
-<!-- 회원 정보 수정 -->
+    <!-- 회원 정보 수정 -->
     <div class="userChange">
+        <h3>회원 정보수정</h3>
         <p class="tip">
-          회원 정보입력
+        회원 정보입력
         </p>
-          <div class="user-update">
-            <label for="" id="id" style="padding-left: 65px;">ID</label> <input type="text" placeholder="ID를 입력해주세요.">
+        <!-- 수정 정보 목록 -->
+        <div class="user-update">
+            <label for="" name="id" id="userid" style="padding-left: 65px;">ID</label> <input type="text" placeholder="ID를 입력해주세요.">
             <hr/>
-            <label for="" id="pw" style="padding-left: 55px;">PW</label> <input type="text" placeholder="PW를 입력해주세요.">
+            <label for="" name="pw" id="userpw" style="padding-left: 55px;">PW</label> <input type="text" placeholder="PW를 입력해주세요.">
             <hr/>
-            <label for="" id="username" style="padding-left: 47px;">이름</label> <input type="text" placeholder="이름을 입력해주세요.">
+            <label for="" name="username" id="username" style="padding-left: 47px;">이름</label> <input type="text" placeholder="이름을 입력해주세요.">
             <hr/>
-            <label for="" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button>인증</button>
+            <label for="" name="phone" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button class="btn-phone">인증</button>
             <hr/>
-            <label for="" id="birth" style="padding-left: 15px;">생년월일</label>
+            <label for="" name="birth" id="birth" style="padding-left: 15px;">생년월일</label>
             <select id="year-select"></select>
             <select id="month-select"></select>
             <select id="day-select"></select>
             <hr/>
             <label for="" id="address" style="padding-left: 45px;">주소</label>
             <input type="text" name= "zipcode" id="postcode" placeholder="우편번호를 입력하세요">
-            <button class="btn-secondary" onclick="searchZip()">우편번호검색</button>
+            <button class="btn-addr" onclick="searchZip()">우편번호검색</button>
             <input type="text" name="addr1" id="defaultAddress" placeholder="기본주소 입력"  class="form-control" style=width:300px;/>
             <input type="text" name="addr2"  placeholder="상세주소 입력" class="form-control"  style=width:200px;/>
             <hr/>
-          </div>
-          <ul class="non-list">
-            <li>필수 정보에 대해 정확히 확인해 주시기 바랍니다.</li>
-          </ul>
+        </div>
+        <!-- 하단 설명 -->
+        <ul class="non-list">
+            <li>- 필수 정보에 대해 정확히 확인해 주시기 바랍니다.</li>
+        </ul>
+        <!-- 하단 버튼 -->
+        <div class="update-btn-center">
+            <button class="cancle-btn">취소</button>
+            <button class="update-btn">완료</button>
+        </div>
     </div>
+<!-- 회원 탈퇴 -->
     <div class="userWithdraw">
+        <!-- 회원탈퇴 크게 -->
+        <div class="toparea">
+            <h3>회원탈퇴</h3>
+            <div class="title">
+                회원탈퇴전
+            </div>
+            <div class="headline">
+                꼭 유의사항을 확인해주세요.
+            </div>
+        </div>
+        <!-- 탈퇴할 계정 선택 -->
         <div class="user-delete">
             <h3 class="sub-underline">아이디 선택</h3>
             <div class="id-check">
                 <input type="checkbox" name="" id="">
-                <label for="">여기에 아이디 들어와야 하는데(체크박스 작동안함;)</label>
+                <label for="">여기에 아이디 받아와서 써지게</label>
             </div>
         </div>
+        <!-- 탈퇴 시 유의사항 설명 -->
         <div class="delete-precaution">
             <h3 class="sub-underline2">유의사항</h3>
             <div class="row">
                 <div class="warning">
-                    <p>- 어쩌구 저쩌구</p>
-                    <p>- 어쩌구 저쩌구</p>
-                    <p>- 어쩌구 저쩌구</p>
-                    <p>- 어쩌구 저쩌구</p>
+                    <p>- 탈퇴 시, 사용하시던 포인트 및 쿠폰 등은 복원할 수 없습니다.</p>
+                    <p>- 진행중인 예약 또는 이용중인 서비스가 있을 경우 탈퇴가 불가합니다.</p>
+                    <p>- 탈퇴 즉시 개인정보가 삭제되면, 어떠한 방법으로도 복원할 수 없습니다.</p>
+                    <p>- 아이디를 탈퇴하시면 결제 취소가 불가능합니다.</p>
                 </div>
             </div>
         </div>
+        <!-- 하단 버튼 -->
         <div class="delete-btn-center">
             <button class="cancle-btn">취소</button>
             <button class="delete-btn">탈퇴</button>
         </div>
     </div>
-    <!-- 회원 탈퇴 -->
+    <!-- 회원 정보 조회 -->
     <div class="userSearch">
         <div>
-            
+                
         </div>
     </div>
 </div>
+
 <!-- 푸터 -->
     <footer>
         <div class="footer">

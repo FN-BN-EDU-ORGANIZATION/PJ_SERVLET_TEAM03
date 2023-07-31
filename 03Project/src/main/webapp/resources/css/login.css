@@ -58,7 +58,7 @@ input:focus, textarea:focus, input[type="checkbox"]:checked + label {
 
 /* 로그인 위 설명 */
 .tip {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* 본격 로그인 창 */
@@ -134,9 +134,15 @@ input[type="text"], input[type="password"] {
     width: 500px;
     min-height: 220px;
 }
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.tip::after {
+    content: "*는 필수 입력 항목입니다.";
+    color: red;
+    font-size: 10px;
+}
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area {
     margin-top: 10px;
 }
+/* * 필수 항목 표시 */
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>label::after {
     position: relative;
     right: 0;
@@ -148,6 +154,7 @@ input[type="text"], input[type="password"] {
     line-height: 18px;
     cursor: default;
 }
+/* 인풋 박스 */
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>input {
     width: 250px;
     height: 45px;
@@ -171,6 +178,32 @@ input[type="text"], input[type="password"] {
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-list>li::before {
     content: "▣";
 }
+/* 인증, 우편검색 버튼 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>.btn-phone {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 13px;
+    text-align: center;
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 2px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>.btn-addr {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 13px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 2px;
+}
+/* 하단 버튼 */
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-bottom-btn {
     width: 1000px;
     margin: 60px 0;

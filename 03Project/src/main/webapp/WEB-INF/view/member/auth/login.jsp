@@ -106,6 +106,7 @@
             <ul class="login-ul">
               <li class="active">
                 <div class="top-btn">
+                <!-- 회원 비회원 전환 버튼 -->
                 <button type="button" class="tab-member-btn">
                   <span>회원</span>
                 </button>
@@ -116,6 +117,7 @@
                 <div class="tab_con">
                   <div class="login-member">
                     <div class="contents_inner">
+                    <!-- 회원 로그인 박스 -->
                       <div class="login-box">
                         <p class="tip">
                           기능이 제한된 비회원으로도 로그인이 가능합니다.
@@ -128,6 +130,7 @@
                             <button type="button" class="login-btn">로그인</button>
                           </div>
                         </form>
+                        <!-- 로그인 하단 메뉴 -->
                         <div class="login-bot">
                           <div class="login-check">
                             <input type="checkbox" name="logincheck" id="checksavedid"/>
@@ -140,14 +143,16 @@
                           </div>
                         </div>
                       </div>
+                      <!-- 비회원 로그인 -->
                       <div class="non-login-box">
                         <p class="tip">
                           지금 바로 회원가입 해보세요
                         </p>
+                        <!-- 로그인 박스 -->
                           <div class="non-login-area">
-                            <label for="" id="username" style="padding-left: 47px;">이름</label> <input type="text" placeholder="이름을 입력해주세요.">
+                            <label for="" name="id" id="username" style="padding-left: 47px;">이름</label> <input type="text" placeholder="이름을 입력해주세요.">
                             <hr/>
-                            <label for="" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button>인증</button>
+                            <label for="" name="pw" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button>인증</button>
                             <hr/>
                             <label for="" id="birth" style="padding-left: 15px;">생년월일</label>
                             <select id="year-select"></select>
@@ -160,14 +165,17 @@
                             <input type="text" name="addr1" id="defaultAddress" placeholder="기본주소 입력"  class="form-control" style=width:300px;/>
                             <input type="text" name="addr2"  placeholder="상세주소 입력" class="form-control"  style=width:200px;/>
                           </div>
+                          <!-- 하단 설명 -->
                           <ul class="non-list">
                             <li>비회원 로그인 시 영화 조회 메뉴만 이용 가능하며 일부 서비스의 경우 정회원 로그인 시에만 사용 가능 합니다.</li>
                           </ul>
+                          <!-- 하단 버튼 -->
                           <div class="non-bottom-btn">
                             <a href="${pageContext.request.contextPath}/join.do" class="join-member">회원가입</a>
                             <a href="#" class="non-login-btn">비회원 로그인</a>
                           </div>
                       </div>
+                      <!-- 로그인 박스 오른쪽 광고 -->
                       <section class="f-section">
                         <div class="swiper">
                           <div class="swiper-wrapper">
@@ -221,7 +229,8 @@
         </div>
       </div>
       <!-- 로그인 끝 -->
-
+      
+<!-- 푸터 -->
     <footer>
         <div class="footer">
             <div class="inner">
