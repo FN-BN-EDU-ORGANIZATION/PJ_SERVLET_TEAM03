@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +8,14 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/user.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/member.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
  <!-- Swiper -->
  <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
 </head>
 <body>
-<h1>USER PAGE</h1>
-   <!-- 헤더 -->
+
+    <!-- 헤더 -->
     <header>
         <div id="header_section" class="header">
             <h1 class="logo">
@@ -100,8 +100,8 @@
                 </div>
             </div>
     </header>
-  <!-- 메인 -->
-<h1>USER PAGE</h1>
+<!-- 메인 -->
+<h1>MEMBER PAGE</h1>
 <!-- 마이페이지 버튼 -->
 <div class="mypage-warp">
     <div class="mypage">
@@ -116,6 +116,12 @@
                 <button class="tab-delete">
                     <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
                     <span class="myChange2">회원 탈퇴</span>
+                </button>
+            </li>
+            <li>
+                <button class="tab-select">
+                    <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
+                    <span class="myChange3">회원 정보 조회</span>
                 </button>
             </li>
         </ul>
@@ -174,11 +180,14 @@
             <button class="delete-btn">탈퇴</button>
         </div>
     </div>
+    <!-- 회원 탈퇴 -->
+    <div class="userSearch">
+        <div>
+            
+        </div>
+    </div>
 </div>
-<!-- 회원 탈퇴 -->
-  
-    
-    <!-- 푸터 -->
+<!-- 푸터 -->
     <footer>
         <div class="footer">
             <div class="inner">
