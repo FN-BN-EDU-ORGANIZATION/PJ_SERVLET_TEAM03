@@ -5,7 +5,7 @@ import java.util.List;
 
 import Domain.Dto.InterestDto;
 
-public class InterestDaoImpl extends ConnectionPool implements InterestDao {
+public class InterestDaoImpl extends DBConnectionPool implements InterestDao {
 	//싱글톤 패턴
 	private static InterestDao instance; 
 	public static InterestDao getInstance() {

@@ -1,60 +1,59 @@
 package Domain.Service;
 
-import java.sql.Date;
-
-import Domain.Dao.LogDao;
-import Domain.Dao.LogDaoImpl;
-import Domain.Dto.LogDto;
-
 public class LogServiceImpl implements LogService {
-
+	
 	private LogDao dao;
-	
-	// 싱글톤
-	private static LogService instance;
-
-	public static LogService getInstance() {
-		if (instance == null)
-			instance = new LogServiceImpl();
-		return instance;
-	}
-	//
-	private LogServiceImpl() {
-		dao = LogDaoImpl.getInstance();
-	}
-	
-	//
-	@Override
-	public boolean addLog() throws Exception{
-		Date curdate = new Date(System.currentTimeMillis());
-		System.out.println("LogServiceImpl's addLog Func.. curdate : " +curdate);
-		LogDto dto =  dao.select(curdate);
-		if(dto.getDate()==null)
-			return dao.insert()>0;
 		
-		System.out.println("기존 로그가 있습니다.");
-		return false;
-	}
+		// 싱글톤
+		private static LogService instance;
 	
-	@Override
-	public boolean updateLog() {
-		int num=0;
-		try {
-			num = dao.update();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		public static LogService getInstance() {
+			if (instance == null)
+				instance = new LogServiceImpl();
+			return instance;
+		}
+		//
+		private LogServiceImpl() {
+			dao = LogDaoImpl.getInstance();
 		}
 		
-		return num>0;
+		//
+		@Override
+		public boolean addLog() throws Exception{
+			Date curdate = new Date(System.currentTimeMillis());
+			System.out.println("LogServiceImpl's addLog Func.. curdate : " +curdate);
+			LogDto dto =  dao.select(curdate);
+			if(dto.getDate()==null)
+				return dao.insert()>0;
+			
+			System.out.println("기존 로그가 있습니다.");
+			return false;
+		}
 		
-	}
-	@Override
-	public LogDto getLogToday() throws Exception{
-		Date curdate = new Date(System.currentTimeMillis());
+		@Override
+		public boolean updateLog() {
+			int num=0;
+			try {
+				num = dao.update();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return num>0;
+			
+		}
+		@Override
+		public LogDto getLogToday() throws Exception{
+			Date curdate = new Date(System.currentTimeMillis());
+			
+			return dao.select(curdate);
 		
-		return dao.select(curdate);
-	}
+		
+		
+		
 	
-
+		
+	}
 }
+

@@ -5,7 +5,7 @@ import java.util.List;
 
 import Domain.Dto.MemberDto;
 
-public class MemberDaoImpl extends ConnectionPool implements MemberDao {
+public class MemberDaoImpl extends DBConnectionPool implements MemberDao {
 	//싱글톤 패턴
 	private static MemberDao instance; 
 	public static MemberDao getInstance() {

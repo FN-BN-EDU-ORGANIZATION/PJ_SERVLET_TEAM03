@@ -45,5 +45,7 @@ public interface MemberService {
 	//관심 삭제하기
 	boolean ImovieDelete(int interestCd, String id, String sid) throws Exception;
 
+	boolean login(HttpServletRequest req) throws Exception;
+
 
 }

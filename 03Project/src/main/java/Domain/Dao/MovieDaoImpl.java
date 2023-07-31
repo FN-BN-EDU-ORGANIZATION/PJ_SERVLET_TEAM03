@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 import Domain.Dto.MovieDto;
 
-public class MovieDaoImpl extends ConnectionPool implements MovieDao {
+public class MovieDaoImpl extends DBConnectionPool implements MovieDao {
 	// 싱글톤 패턴
 	private static MovieDao instance;
 

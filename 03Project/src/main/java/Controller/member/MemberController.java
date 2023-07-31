@@ -1,10 +1,11 @@
-package Controller;
+package Controller.member;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Controller.SubController;
 import Domain.Dto.InterestDto;
 import Domain.Dto.MemberDto;
 import Domain.Service.AuthService;
