@@ -1,19 +1,18 @@
-package Controller;
+package Controller.member;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import Controller.SubController;
 import Domain.Service.AuthService;
 import Domain.Service.AuthServiceImpl;
 import Domain.Service.Session;
 
 public class AuthController implements SubController {
 	
-	private AuthService service;
+	private AuthService service = AuthServiceImpl.getInstance();
 	
-	public AuthController() {
-		service = AuthServiceImpl.getInstance();
-	}
+
 	// 1 login, 2 logout
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		if (serviceNo == 1) {
@@ -22,7 +21,7 @@ public class AuthController implements SubController {
 			
 			if(id == null || pw == null) {
 				System.out.println("[ERROR] Data Validation Check Error!");
-				return null;
+				return null; 
 			}
 			
 			Map<String,Object> result = new HashMap();

@@ -44,7 +44,7 @@ public class FrontController extends HttpServlet {
 		
 		//member
 		map.put(projectPath+"/member/search.do", new MemberSearchController());
-		map.put(projectPath+"/join.do", new MemberAddController()); 		//Join
+		map.put(projectPath+"/join.do", new MemberAddController()); 				//Join
 		map.put(projectPath+"/member/update.do", new MemberUpdateController());
 		map.put(projectPath+"/member/delete.do", new MemberDeleteController());
 		

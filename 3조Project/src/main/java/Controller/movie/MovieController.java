@@ -1,4 +1,4 @@
-package Controller;
+package Controller.movie;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,18 +7,15 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.SubController;
 import Domain.Dto.MovieDto;
 import Domain.Service.MovieService;
 import Domain.Service.MovieServiceImpl;
 
 public class MovieController implements SubController {
 	
-	private MovieService service;
+	private MovieService service = MovieServiceImpl.getInstance();
 	
-	public MovieController() {
-		service = MovieServiceImpl.getInstance();
-	}
-
 	//1 Select , 2 Insert , 3 Update , 4 Delete, 5 DayUpdate
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		
@@ -34,6 +31,7 @@ public class MovieController implements SubController {
 			result.put("result", list);
 			return result;
 		
+			
 		} else if(serviceNo == 2) {
 			Integer MovieCd = (Integer) param.get("MovieCd");
 			String MovieNm = (String) param.get("MovieNm");

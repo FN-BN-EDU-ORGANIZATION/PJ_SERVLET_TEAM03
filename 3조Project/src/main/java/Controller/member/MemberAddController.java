@@ -15,7 +15,6 @@ public class MemberAddController implements SubController{
 	private MemberService service = MemberServiceImpl.getInstance();
 
 
-	
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		System.out.println("MemberAddController execute");
@@ -54,7 +53,7 @@ public class MemberAddController implements SubController{
 
 		}catch(Exception e) {
 			
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 		
 	}

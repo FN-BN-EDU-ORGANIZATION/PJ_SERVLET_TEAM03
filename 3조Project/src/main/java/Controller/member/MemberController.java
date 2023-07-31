@@ -1,10 +1,14 @@
-package Controller;
+package Controller.member;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import Controller.SubController;
 import Domain.Dto.InterestDto;
 import Domain.Dto.MemberDto;
 import Domain.Service.AuthService;
@@ -14,14 +18,10 @@ import Domain.Service.MemberServiceImpl;
 
 public class MemberController implements SubController {
 	
-	private MemberService service;
-	private AuthService aservice;
+	private MemberService service = MemberServiceImpl.getInstance();
+	private AuthService aservice  = AuthServiceImpl.getInstance();
 	
-	public MemberController() {
-		service = MemberServiceImpl.getInstance();
-		aservice = AuthServiceImpl.getInstance();
-	}
-	//1,2,3 memberSearch 4 join 5 update 6 delete 7,8,9 InterestSearch 10 insert 11 update 12 delete
+	//1,2,3 memberSearch 4 join 5 update 6 delete / 7,8,9 InterestSearch 10 insert 11 update 12 delete
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		
 		if (serviceNo == 1) {
@@ -36,7 +36,7 @@ public class MemberController implements SubController {
 			System.out.println("memberSearchList_Select Block!");
 			Map<String,Object> result = new HashMap();
 			result.put("result", list);
-			return result;
+			return result; 
 			
 		}else if(serviceNo == 2) {
 			String sid = (String)param.get("sid");
@@ -266,6 +266,12 @@ public class MemberController implements SubController {
 			
 		}
 		return null;
+	}
+
+	@Override
+	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+
+		
 	}
 
 }
