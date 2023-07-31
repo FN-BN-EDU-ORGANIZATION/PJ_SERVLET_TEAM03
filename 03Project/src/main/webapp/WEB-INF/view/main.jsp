@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
 </head>
 <body>
-
+<%-- 
 <h1>MAIN</h1>
 <hr />
 <c:if test="${empty ROLE}">
@@ -21,13 +21,13 @@
 </c:if>
 <c:if test="${not empty ROLE}">
 	<a href="${pageContext.request.contextPath}/logout.do" > >LOGOUT</a><br/>
-</c:if>
+</c:if> --%>
 
 <body>
     <header>
         <div id="header_section" class="header">
             <h1 class="logo">
-                <a href="index.html"></a>
+                <a href="${pageContext.request.contextPath}/main.do"></a>
             </h1>
             <div class="gnb">
                 <ul class="menu1">
@@ -39,10 +39,10 @@
                     <li><a href="">멤버십</a></li>
                     <li><a href="">고객센터</a></li>
                     <li><a href="">단체관람/대관문의</a></li>
-                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
                 </ul>
                 <ul class="menu3">
-                    <li><a href="회원가입.html">회원가입</a></li>
+                    <li><a href="${pageContext.request.contextPath}/join.do">회원가입</a></li>
                     <li><a href="">바로예매</a></li>
                     <li><a href=""><img src="resources/image/햄버거버튼.png"></a></li>
                 </ul>
@@ -107,6 +107,7 @@
                     </ul>
                 </div>
             </div>
+        </div>
     </header>
     <main>
         <div class="subsection">

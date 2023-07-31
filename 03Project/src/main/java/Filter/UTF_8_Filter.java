@@ -22,13 +22,15 @@ public class UTF_8_Filter implements Filter{
 		resp.setCharacterEncoding("UTF-8");
 		
 		String requestURI = ((HttpServletRequest) req).getRequestURI();
-	        if (requestURI.endsWith(".css")) {
-	            resp.setContentType("text/css; charset=UTF-8");
-	        } else {
-	            resp.setContentType("text/html; charset=UTF-8");
-	        }
+        if (requestURI.endsWith(".css")) {
+            resp.setContentType("text/css; charset=UTF-8");
+        } else {
+            resp.setContentType("text/html; charset=UTF-8");
+        }
 
-	        chain.doFilter(req, resp);
-	    }
+		
+		chain.doFilter(req, resp);
+		
+	}
 
 }

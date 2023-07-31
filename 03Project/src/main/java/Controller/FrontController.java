@@ -44,7 +44,7 @@ public class FrontController extends HttpServlet {
 		
 		//member
 		map.put(projectPath+"/member/search.do", new MemberSearchController());
-		map.put(projectPath+"/member/join.do", new MemberAddController()); 		//Join
+		map.put(projectPath+"/join.do", new MemberAddController()); 		//Join
 		map.put(projectPath+"/member/update.do", new MemberUpdateController());
 		map.put(projectPath+"/member/delete.do", new MemberDeleteController());
 		
@@ -60,6 +60,9 @@ public class FrontController extends HttpServlet {
 		
 		//main
 		map.put(projectPath+"/main.do", new MainController());
+		
+		//user
+		map.put(projectPath+"/user.do", new UserController()); 
 		
 		
 	}

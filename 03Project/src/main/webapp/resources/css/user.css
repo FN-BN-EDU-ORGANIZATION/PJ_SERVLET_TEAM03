@@ -1,0 +1,198 @@
+/* 전체 */
+.mypage-warp {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 마이페이지 버튼 줄 */
+.mypage-warp>.mypage {
+    margin-top: 30px;
+    padding-top: 35px;
+}
+.mypage-warp>.mypage>.mypage-menu::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.mypage-warp>.mypage>.mypage-menu>li {
+    margin-left: 200px;
+    float: left;
+    background-color: gray;
+}
+.mypage-warp>.mypage>.mypage-menu>li>button {
+    display: block;
+    position: relative;
+    padding-top: 80px;
+    width: 180px;
+    height: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+.mypage-warp>.mypage>.mypage-menu>li>button>.img {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 100%;
+    text-align: center;
+}
+.mypage-warp>.mypage>.mypage-menu>li>button>.myChange1 {
+    font-size: 13px;
+    text-align: center;
+}
+.mypage-warp>.mypage>.mypage-menu>li>button>.myChange2 {
+    font-size: 13px;
+    text-align: center;
+}
+
+/* 회원 정보 수정 */
+.mypage-warp>.userChange {
+    display: none;
+    position: relative;
+}
+.mypage-warp>.userChange>.tip {
+    display: block;
+    border-bottom: 1px solid black;
+    margin: 0 -30px;
+    padding: 20px 30px 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mypage-warp>.userChange>.user-update {
+    margin-top: 10px;
+}
+.mypage-warp>.userChange>.user-update>label::after {
+    position: relative;
+    right: 0;
+    top: 1px;
+    content: "*";
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    cursor: default;
+}
+.mypage-warp>.userChange>.user-update>input {
+    width: 250px;
+    height: 25px;
+    border: 1px solid lightgray;
+}
+
+/* 회원 탈퇴 */
+.mypage-warp>.userWithdraw {
+    display: none;
+}
+.mypage-warp>.userWithdraw>.user-delete {
+    margin: 0 0 50px;
+}
+.mypage-warp>.userWithdraw>.user-delete>.sub-underline {
+    display: block;
+    border-bottom: 1px solid black;
+    margin: 0 -30px;
+    padding: 20px 30px 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mypage-warp>.userWithdraw>.user-delete>.id-check {
+    display: block;
+    position: relative;
+    margin: 29px 0 0;
+    padding: 0 0 23px;
+    border-bottom: 1px solid gray;
+
+}
+.mypage-warp>.userWithdraw>.user-delete>.id-check>input {
+    position: absolute;
+    left: 1px; top: 1px;
+    width: 10px;
+    height: 10px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+input[type="checkbox"]:checked + label::before {
+    background-image: url(../image/chk_8.png);
+}
+.mypage-warp>.userWithdraw>.user-delete>.id-check>label {
+    display: inline-block;
+    padding: 0 0 0 25px;
+    height: 18px;
+    line-height: 18px;
+    vertical-align: top;
+    cursor: pointer;
+}
+.mypage-warp>.userWithdraw>.user-delete>.id-check>label::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 18px;
+    height: 18px;
+    background: #fff no-repeat 0 0;
+    background-image: url(../image/ui-input.png);
+    background-size: 90px 18px;
+    overflow: hidden;
+}
+.mypage-warp>.userWithdraw>.delete-precaution {
+    margin: 0 0 20px;
+}
+.mypage-warp>.userWithdraw>.delete-precaution>.sub-underline2 {
+    display: block;
+    border-bottom: 1px solid black;
+    margin: 0 -30px;
+    padding: 0 30px 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mypage-warp>.userWithdraw>.delete-precaution>.row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+}
+.mypage-warp>.userWithdraw>.delete-precaution>.row>.warning {
+    margin: 20px 0;
+    line-height: 1.4;
+}
+.mypage-warp>.userWithdraw>.delete-precaution>.row>.warning>p {
+    position: relative;
+    margin: 15px 0 0;
+    padding: 0 0 0 10px;
+    font-size: 15px;
+    color: gray;
+}
+.mypage-warp>.userWithdraw>.delete-precaution>.row>.warning>p:first-child {
+    margin: 0;
+}
+.mypage-warp>.userWithdraw>.delete-btn-center {
+    text-align: center;
+}
+.mypage-warp>.userWithdraw>.delete-btn-center>.cancle-btn {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: black;
+    padding: 0 10px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.mypage-warp>.userWithdraw>.delete-btn-center>.delete-btn {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: red;
+    padding: 0 10px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}

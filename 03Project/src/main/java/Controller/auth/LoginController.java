@@ -50,7 +50,7 @@ public class LoginController implements SubController {
 			if(isLogin)
 			{
 				//main.do 이동 - Redirect
-				resp.sendRedirect(req.getContextPath()+"/main.do");
+				resp.sendRedirect(req.getContextPath()+"/WEB-INF/view/user.jsp");
 			}
 			else
 			{

@@ -168,6 +168,6 @@ main>.subsection>.sub1>.sub2>.front>a{
     height: 13px;
     border: 0;
     /* x표시 이미지 */
-    background: transparent url(resources/image/close_13_gry.png) no-repeat 0 0;
+    background: transparent url(../image/close_13_gry.png) no-repeat 0 0;
 }
    

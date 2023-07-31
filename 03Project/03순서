@@ -22,8 +22,9 @@
 //-------------------------------
 ///WEB-INF/view/member/user.jsp 알림아이콘만들기
 //-------------------------------
-//- google Meterial icon 받기
+//- google Meterial icon cdn받기
 //- 기본 스타일 지정하기
+//- font-size:2rem
 
 //-------------------------------
 //[Table] tbl_lend_message
@@ -69,19 +70,36 @@ CREATE TABLE `bookdb`.`tbl_lend_message` (
  //[ConnectionPool] ConnectionPool Conn 공유설정 
  //-------------------------------
 - public static Connection conn;
+- public static void createConnection() {
+		try {
+			if(conn==null) {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				conn=DriverManager.getConnection(url,id,pw);
+				System.out.println("ConnectionPool Connection 생성");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+ //-------------------------------	
+ //[Controller] FrontController 생성자에 코드 추가
+ //-------------------------------
+ //	ConnectionPool.createConnection();추가
+ 
  
  //-------------------------------
  //[Service] LendServiceImpl 
  //-------------------------------
  - ConnectionPool.conn.setAutoCommit(false);
  - ConnectionPool.conn.commit();
- 
+ - ConnectionPool.conn.setAutoCommit(true);
  //-------------------------------
  //[Controller] LendAddController 
  //-------------------------------
  - Catch부분에 다음코드 추가
  	ConnectionPool.conn.rollback();
  
+ //
  //-------------------------------
  //	[Filter] UserLendMessageFilter 
  //-------------------------------
@@ -120,6 +138,109 @@ CREATE TABLE `bookdb`.`tbl_lend_message` (
 //-----------------------------------------------------
 //Listener 로 접속현황 파악하기(with Chart.js)
 //--------------------------------------------------------------
+//-------------------------------
+//[DB] tbl_member에 admin 등록
+//-------------------------------
+admin	1234	admin	ROLE_ADMIN
+등록
+
+//-------------------------------
+// [table] tbl_log
+//-------------------------------
+//id(PK),total,user,member,date
+
+CREATE TABLE `bookdb`.`tbl_log` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `total` INT NULL,
+  `user` INT NULL,
+  `member` INT NULL,
+  `date` DATE NULL,
+  PRIMARY KEY (`id`));
+
+
+//-------------------------------
+// [Dto] LogDto
+//-------------------------------
+// 코드 확인
+
+
+//-------------------------------
+// [Dao] LogDaoImpl
+//-------------------------------
+// 코드 확인
+
+//-------------------------------
+// [Dao] LogDao Interface
+//-------------------------------
+// 코드 확인
+
+//-------------------------------
+// [Service] LogServiceImpl
+//-------------------------------
+// 코드 확인
+
+//-------------------------------
+// [Service] LogService Interface
+//-------------------------------
+// 코드 확인
+
+
+
+
+
+//-------------------------------
+///WEB-INF/view/admin/admin.jsp 생성
+//-------------------------------
+- 기본 스타일 코드 추가
+- chart.js cdn 가져오기
+- Application이 동작하는동안 들어오는 총접속량별 위치 지정
+- Application이 동작하는동안 들어오는 유저 접속량별 위치 지정
+- Application이 동작하는동안 들어오는 사서 접속량별 위치 지정
+
+
+
+
+//-------------------------------
+//[Controller] MemberPageController 에 코드 추가
+//-------------------------------
+- else if(role.equals("ROLE_ADMIN")) {
+req.getRequestDispatcher("/WEB-INF/view/admin/admin.jsp").forward(req, resp);
+}
+
+
+
+//-------------------------------
+// [log] State 클래스 추가
+//-------------------------------
+//- Listener>log>State.java 추가
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//-------------------------------
+// [Listener] InitServletContextListener
+//-------------------------------
+- private LogService logService = LogServiceImpl.getInstance();
+
+- implements ServletContextListener
+- contextInitialized 함수 재정의
+- FrontController로 부터 ConnectionPool.createConnection(); 가져와서 처리
+-- 서블릿 동작시 Connection 객체 바로 생성 
+
+- logService.addLog();호출
+  
+
+
+
 //-------------------------------
 // Session 생성에 따른 속성 추가 / 변경
 //-------------------------------
