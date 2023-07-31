@@ -112,7 +112,7 @@
             </div>
         </div>
     </header>
-	<form id="joinfrm" name="joinfrm">
+	<form id="joinfrm" name="joinfrm" action="" method="post">
 		<div style="width: 900px; margin-left: 550px; margin-top: -40px;">
 			<h2 style="margin-top: 50px;">회원가입</h2>
 			<br>

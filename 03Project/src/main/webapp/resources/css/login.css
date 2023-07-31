@@ -309,6 +309,7 @@ input[type="checkbox"] + label::before {
     width: 450px;
     height: 220px;
     background-color: white;
+    overflow: hidden;
 }
 .login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.f-section>.swiper>.swiper-wrapper {
 }

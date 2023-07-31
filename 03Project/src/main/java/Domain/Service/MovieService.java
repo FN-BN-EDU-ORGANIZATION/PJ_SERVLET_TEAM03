@@ -2,14 +2,12 @@ package Domain.Service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import Domain.Dto.MovieDto;
 
 public interface MovieService {
 
 	//영화 조회
-	List<MovieDto> getAllMovie(HttpServletRequest req) throws Exception;
+	List<MovieDto> getAllMovie() throws Exception;
 
 	//영화 단건 조회
 	MovieDto getMovie(String movieCd) throws Exception;

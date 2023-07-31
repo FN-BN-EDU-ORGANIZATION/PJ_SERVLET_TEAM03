@@ -1,4 +1,4 @@
-package Controller.movie;
+package Controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Controller.SubController;
 import Domain.Dto.MovieDto;
 import Domain.Service.MovieService;
 import Domain.Service.MovieServiceImpl;
