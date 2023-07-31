@@ -124,10 +124,10 @@
                         </p>
                         <form action="#" method="post">
                           <div class="login-area">
-                            <input type="text" id="userid" maxlength="30" placeholder="아이디를 입력해 주세요."required/>
+                            <input type="text" name="id" id="userid" maxlength="30" placeholder="아이디를 입력해 주세요."required/>
                             <br/>
-                            <input type="password" id="userpw" maxlength="20" placeholder="비밀번호를 입력해 주세요." required/>
-                            <button type="button" class="login-btn">로그인</button>
+                            <input type="password" name="pw" id="userpw" maxlength="20" placeholder="비밀번호를 입력해 주세요." required/>
+                            <button type="submit" class="login-btn">로그인</button>
                           </div>
                         </form>
                         <!-- 로그인 하단 메뉴 -->
@@ -154,7 +154,7 @@
                             <hr/>
                             <label for="" name="pw" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button>인증</button>
                             <hr/>
-                            <label for="" id="birth" style="padding-left: 15px;">생년월일</label>
+                            <label for="" name="birth" id="birth" style="padding-left: 15px;">생년월일</label>
                             <select id="year-select"></select>
                             <select id="month-select"></select>
                             <select id="day-select"></select>
@@ -261,6 +261,7 @@
             </div>
         </div>
     </footer>
+    
 <!-- 자바 스크립트 -->
 <!-- 제이쿼리 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -334,12 +335,12 @@
           delay: 1000,
         },
         loop: true,
-     });
+      });
 
       // 하단 광고 이미지 랜덤 표시
       let bottomBanner = Math.floor(Math.random() * 3);
       let imgName = ['RUBYGILLMAN_980180', 'Conan_980180', 'Metamorphosis_980180'];
-      $('.bot_banner').children('a').children('img').attr('src', './image/' + imgName[bottomBanner] + '.jpg');
+      $('.bot_banner').children('a').children('img').attr('src', 'resources/image/' + imgName[bottomBanner] + '.jpg');
 
       // 생년월일 선택자
       const yearSelect = document.getElementById('year-select');
@@ -347,11 +348,11 @@
       const daySelect = document.getElementById('day-select');
 
         // 연도 범위 설정 (예: 1900-2023)
-      const startYear = 1900;
-      const endYear = 2023;
+      const startYear = 2023;
+      const endYear = 1900;
 
         // 연도 <select> 채우기
-      for (let year = startYear; year <= endYear; year++) {
+      for (let year = startYear; year >= endYear; year--) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;

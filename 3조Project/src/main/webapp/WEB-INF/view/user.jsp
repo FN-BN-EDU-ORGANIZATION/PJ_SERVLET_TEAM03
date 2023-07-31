@@ -14,7 +14,6 @@
  <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
 </head>
 <body>
-<h1>USER PAGE</h1>
    <!-- 헤더 -->
     <header>
         <div id="header_section" class="header">
@@ -109,14 +108,14 @@
             <!-- 정보 수정 -->
             <li>
                 <button class="tab-update">
-                    <span class="img"><img src="./image/ic_my_menu_1.png" alt=""></span>
+                    <span class="img"><img src="resources/image/ic_my_menu_1.png" alt=""></span>
                     <span class="myChange">회원 정보 변경</span>
                 </button>
             </li>
             <!-- 탈퇴 -->
             <li>
                 <button class="tab-delete">
-                    <span class="img"><img src="./image/ic_my_menu_5.png" alt=""></span>
+                    <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
                     <span class="myChange2">회원 탈퇴</span>
                 </button>
             </li>
@@ -275,11 +274,11 @@
     const daySelect = document.getElementById('day-select');
 
         // 연도 범위 설정 (예: 1900-2023)
-      const startYear = 1900;
-      const endYear = 2023;
+      const startYear = 2023;
+      const endYear = 1900;
 
         // 연도 <select> 채우기
-      for (let year = startYear; year <= endYear; year++) {
+      for (let year = startYear; year >= endYear; year--) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;

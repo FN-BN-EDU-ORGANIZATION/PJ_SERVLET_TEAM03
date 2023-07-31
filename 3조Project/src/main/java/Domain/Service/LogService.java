@@ -1,19 +1,14 @@
 package Domain.Service;
 
-import Controller.member.LogDto;
+import Domain.Dto.LogDto;
 
 public interface LogService {
-	
+
+	//
 	boolean addLog() throws Exception;
-	
+
 	boolean updateLog();
 
-	LogDto getLogToday();
-	
-	
-	
-	
+	LogDto getLogToday() throws Exception;
 
-	
 }
-

@@ -34,18 +34,21 @@ public class MemberServiceImpl implements MemberService {
 	//회원 가입하기
 		@Override
 		public boolean memberJoin(MemberDto dto) throws Exception {  //테스트 통과 ok
+			dto.setRole("ROLE_USER");
 			int result = dao.insert(dto);
 			if(result > 0)
 				return true;
 			return false;
 		}
+		
+		
 		//회원 조회하기(전체) - 사서
 		@Override
 		public List<MemberDto> memberSearchList(String sid) throws Exception {  //테스트 통과 ok
 			String role = authService.getRole(sid);
 			if(role.equals("ROLE_MEMBER")) 
 				return dao.select();
-			return null;
+			return null; 
 		}
 		//회원 조회하기(한명) - 사서
 		@Override
@@ -142,5 +145,7 @@ public class MemberServiceImpl implements MemberService {
 			}
 			return false;
 		}
+		
+
 		
 }
