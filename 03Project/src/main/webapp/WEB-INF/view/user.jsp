@@ -247,27 +247,17 @@
      //회원 비회원 전환 버튼
     const updateBtn = document.querySelector(".tab-update");
     const deleteBtn = document.querySelector(".tab-delete");
-    const selectBtn = document.querySelector(".tab-select");
     const ChangeBox = document.querySelector(".userChange");
     const WirhdrawBox = document.querySelector(".userWithdraw");
-    const SearchBox = document.querySelector(".userSearch");
 
     updateBtn.addEventListener("click", function() {
       ChangeBox.style.display = "block";
       WirhdrawBox.style.display = "none";
-      SearchBox.style.display = "none";
     });
 
     deleteBtn.addEventListener("click", function() {
       WirhdrawBox.style.display = "block";
       ChangeBox.style.display = "none";
-      SearchBox.style.display = "none";
-    });
-
-    selectBtn.addEventListener("click", function() {
-      ChangeBox.style.display = "none";
-      WirhdrawBox.style.display = "none";
-      SearchBox.style.display = "block";
     });
 
     // 생년월일 선택자
