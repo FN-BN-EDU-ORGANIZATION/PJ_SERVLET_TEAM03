@@ -9,6 +9,10 @@
 <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
+<!-- 네이버 폰트 -->
+<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 <style>
 .first {
 	margin-top: 50px;
@@ -126,7 +130,7 @@
 			<hr>
 			<div>
 				<label for="name"><span class="con">이름 : </span></label><input
-					type="text" placeholder="한글 또는 영문">
+					name="username" type="text" placeholder="한글 또는 영문">
 				<hr>
 			</div>
 			<div>
@@ -216,7 +220,17 @@
         </div>
     </footer>
     
-    <script defer>
+<!-- 자바 스크립트 -->
+<!-- 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- lodash cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- 우편 검색 -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    
+<script defer>
 	/* 자바스크립트 수준의 유효성 체크  */
 	const isValid=function(){
 		const joinfrm = document.joinfrm;
@@ -225,12 +239,9 @@
 
 		joinfrm.submit();
 	}
-	</script>
-    
-    <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script defer>
-	
-	
+</script>
+
+<script defer>
 	const searchZip=function()
 	{
 	    new daum.Postcode({
@@ -256,5 +267,6 @@
 	    }).open();
 	}
 </script>
+
 </body>
 </html>

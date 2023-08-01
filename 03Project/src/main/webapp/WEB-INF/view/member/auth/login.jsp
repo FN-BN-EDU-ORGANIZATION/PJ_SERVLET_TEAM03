@@ -10,8 +10,10 @@
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/login.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
- <!-- Swiper -->
- <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+<!-- 네이버 폰트 -->
+<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
       <header>

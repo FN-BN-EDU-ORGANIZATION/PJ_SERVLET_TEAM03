@@ -10,8 +10,10 @@
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/member.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
- <!-- Swiper -->
- <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+<!-- 네이버 폰트 -->
+<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
 
@@ -265,14 +267,14 @@
 
     updateBtn.addEventListener("click", function() {
       ChangeBox.style.display = "block";
-      SearchBox.style.display = "none";
       WirhdrawBox.style.display = "none";
+      SearchBox.style.display = "none";
     });
 
     deleteBtn.addEventListener("click", function() {
+      WirhdrawBox.style.display = "block";
       ChangeBox.style.display = "none";
       SearchBox.style.display = "none";
-      WirhdrawBox.style.display = "block";
     });
 
     selectBtn.addEventListener("click", function() {
