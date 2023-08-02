@@ -1,10 +1,12 @@
-package Controller;
+package Controller.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class UserController implements SubController{
+import Controller.SubController;
+
+public class MemberPageController implements SubController{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -22,7 +24,6 @@ public class UserController implements SubController{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

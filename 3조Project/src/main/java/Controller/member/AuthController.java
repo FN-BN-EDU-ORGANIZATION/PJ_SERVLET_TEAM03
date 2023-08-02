@@ -31,6 +31,7 @@ public class AuthController implements SubController {
 				e.printStackTrace();
 			}
 			return result;
+			
 		}else if(serviceNo == 2) {
 			String id = (String) param.get("id");
 			String sid = (String)param.get("sid");

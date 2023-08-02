@@ -49,7 +49,7 @@ public class LoginController implements SubController {
 			isLogin=service.login(req);
 			if(isLogin)
 			{
-				//main.do 이동 - Redirect
+				//user.do 이동 - Redirect
 				resp.sendRedirect(req.getContextPath()+"/user.do");
 			}
 			else

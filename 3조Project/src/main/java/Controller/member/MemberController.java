@@ -24,23 +24,10 @@ public class MemberController implements SubController {
 	//1,2,3 memberSearch 4 join 5 update 6 delete / 7,8,9 InterestSearch 10 insert 11 update 12 delete
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		
-		if (serviceNo == 1) {
-			String sid = (String)param.get("sid");
-			
-			List<MemberDto> list = null;
-			try {
-				list = service.memberSearchList(sid);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-			System.out.println("memberSearchList_Select Block!");
-			Map<String,Object> result = new HashMap();
-			result.put("result", list);
-			return result; 
 			
 		}else if(serviceNo == 2) {
-			String sid = (String)param.get("sid");
-			String id = (String)param.get("id");
+			String sid = req.getParameter("sid");
+			String id = param.get("id");
 			
 			MemberDto list = null;
 			try {

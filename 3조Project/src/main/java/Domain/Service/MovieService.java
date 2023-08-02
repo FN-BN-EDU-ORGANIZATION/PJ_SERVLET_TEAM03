@@ -2,6 +2,8 @@ package Domain.Service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import Domain.Dto.MovieDto;
 
 public interface MovieService {
@@ -23,5 +25,7 @@ public interface MovieService {
 	
 	//영화 자동 등록하기(직원)
 	boolean updateDayMovie(String sid) throws Exception;
+
+	Boolean addMovie(MovieDto dto, HttpServletRequest req);
 
 }

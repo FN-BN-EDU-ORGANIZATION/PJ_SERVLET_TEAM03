@@ -33,10 +33,10 @@ public class MovieDaoImpl extends ConnectionPool implements MovieDao {
 	@Override
 	public int insert(MovieDto dto) throws Exception { // 테스트 구동 ok
 		pstmt = conn.prepareStatement("insert into tbl_movie values(?,?,?,?,?,?,?)");
-		pstmt.setInt(1, dto.getMovieCd());
+		pstmt.setString(1, dto.getMovieCd());
 		pstmt.setString(2, dto.getMovieNm());
 		pstmt.setString(3, dto.getMovieOp());
-		pstmt.setDouble(4, dto.getMovieTn());
+		pstmt.setString(4, dto.getMovieTn());
 		pstmt.setString(5, dto.getMovieGs());
 		pstmt.setString(6, dto.getMovieOv());
 		pstmt.setString(7, dto.getMoviePo());
@@ -54,10 +54,10 @@ public class MovieDaoImpl extends ConnectionPool implements MovieDao {
 		if (rs != null) {
 			while (rs.next()) {
 				dto = new MovieDto();
-				dto.setMovieCd(rs.getInt("movieCd"));
+				dto.setMovieCd(rs.getString("movieCd"));
 				dto.setMovieNm(rs.getString("movieNm"));
 				dto.setMovieOp(rs.getString("movieOp"));
-				dto.setMovieTn(rs.getDouble("movieTn"));
+				dto.setMovieTn(rs.getString("movieTn"));
 				dto.setMovieGs(rs.getString("movieGs"));
 				dto.setMovieOv(rs.getString("movieOv"));
 				dto.setMoviePo(rs.getString("moviePo"));
@@ -78,10 +78,10 @@ public class MovieDaoImpl extends ConnectionPool implements MovieDao {
 		if (rs != null && rs.isBeforeFirst()) {
 			rs.next();
 			dto = new MovieDto();
-			dto.setMovieCd(rs.getInt("movieCd"));
+			dto.setMovieCd(rs.getString("movieCd"));
 			dto.setMovieNm(rs.getString("movieNm"));
 			dto.setMovieOp(rs.getString("movieOp"));
-			dto.setMovieTn(rs.getDouble("movieTn"));
+			dto.setMovieTn(rs.getString("movieTn"));
 			dto.setMovieGs(rs.getString("movieGs"));
 			dto.setMovieOv(rs.getString("movieOv"));
 			dto.setMoviePo(rs.getString("moviePo"));
@@ -97,11 +97,11 @@ public class MovieDaoImpl extends ConnectionPool implements MovieDao {
 				"update tbl_movie set movieNm=?,movieOp=?,movieTn=?,movieGs=?,movieOv=?,moviePo=? where movieCd=?");
 		pstmt.setString(1, dto.getMovieNm());
 		pstmt.setString(2, dto.getMovieOp());
-		pstmt.setDouble(3, dto.getMovieTn());
+		pstmt.setString(3, dto.getMovieTn());
 		pstmt.setString(4, dto.getMovieGs());
 		pstmt.setString(5, dto.getMovieOv());
 		pstmt.setString(6, dto.getMoviePo());
-		pstmt.setInt(7, dto.getMovieCd());
+		pstmt.setString(7, dto.getMovieCd());
 		int result = pstmt.executeUpdate();
 		pstmt.close();
 		return result;

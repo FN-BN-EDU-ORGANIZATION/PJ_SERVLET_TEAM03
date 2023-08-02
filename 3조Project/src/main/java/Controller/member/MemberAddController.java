@@ -58,8 +58,6 @@ public class MemberAddController implements SubController{
 		
 	}
 
-
-
 	private boolean isValid(Map<String, String[]> parameterMap) {
 		// TODO Auto-generated method stub
 		return false;

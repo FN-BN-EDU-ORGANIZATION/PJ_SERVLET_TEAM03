@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import Domain.Dao.InterestDao;
 import Domain.Dao.InterestDaoImpl;
 import Domain.Dao.MemberDao;
@@ -44,8 +46,8 @@ public class MemberServiceImpl implements MemberService {
 		
 		//회원 조회하기(전체) - 사서
 		@Override
-		public List<MemberDto> memberSearchList(String sid) throws Exception {  //테스트 통과 ok
-			String role = authService.getRole(sid);
+		public List<MemberDto> memberSearchList(HttpServletRequest req) throws Exception {  //테스트 통과 ok
+			HttpSession session = 
 			if(role.equals("ROLE_MEMBER")) 
 				return dao.select();
 			return null; 
