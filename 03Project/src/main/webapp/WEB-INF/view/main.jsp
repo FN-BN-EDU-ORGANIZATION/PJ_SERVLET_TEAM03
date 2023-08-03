@@ -10,9 +10,9 @@
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
-<!-- 네이버 폰트 -->
-<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
-<!-- Swiper -->
+ <!-- Swiper -->
+ <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+ <!-- Swiper -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <style>
         .swiper-slide{
@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<%-- 
+<%--
 <h1>MAIN</h1>
 <hr />
 <c:if test="${empty ROLE}">
@@ -201,7 +201,6 @@
             </div>
         </div>
     </footer>
-    
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- 제이쿼리 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

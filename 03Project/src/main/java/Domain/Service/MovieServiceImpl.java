@@ -1,7 +1,8 @@
 package Domain.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import Domain.Dao.MovieDao;
 import Domain.Dao.MovieDaoImpl;
@@ -81,5 +82,10 @@ public class MovieServiceImpl implements MovieService {
 				return true;
 		}
 		return false;
+	}
+	@Override
+	public Boolean addMovie(MovieDto dto, HttpServletRequest req) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

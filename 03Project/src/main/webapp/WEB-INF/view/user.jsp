@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -10,231 +10,228 @@
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/user.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
-<!-- 네이버 폰트 -->
-<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
 <!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<link
+	href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css"
+	rel="stylesheet">
 </head>
 <body>
-   <!-- 헤더 -->
-    <header>
-        <div id="header_section" class="header">
-            <h1 class="logo">
-                <a href="index.html"></a>
-            </h1>
-            <div class="gnb">
-                <ul class="menu1">
-                    <li><a href=""><img src="resources/image/페이스북.png" alt="페이스북로고"></a></li>
-                    <li><a href="" style="width:35px"><img src="resources/image/유튜브.png" alt="유튜브로고"></a></li>
-                    <li><a href=""><img src="resources/image/인스타그램.png" alt="인스타그램로고"></a></li>
-                </ul>
-                <ul class="menu2">
-                    <li><a href="">멤버십</a></li>
-                    <li><a href="">고객센터</a></li>
-                    <li><a href="">단체관람/대관문의</a></li>
-                    <li><a href="${pageContext.request.contextPath}/logout.do">로그아웃</a></li>
-                </ul>
-                <ul class="menu3">
-                    <li><a href="${pageContext.request.contextPath}/join.do">회원가입</a></li>
-                    <li><a href="">바로예매</a></li>
-                    <li><a href=""><img src="resources/image/햄버거버튼.png"></a></li>
-                </ul>
-                <div class="nav">
-                    <ul class="submenu">
-                        <li>
-                            <a href="">예매</a>
-                            <ul class="submenu1">
-                                <li><a href="">예매하기</a></li>
-                                <li><a href="">상영시간표</a></li>
-                                <li><a href="">할인안내</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">영화</a>
-                            <ul class="submenu2">
-                                <li><a href="">홈</a></li>
-                                <li><a href="">현재상영작</a></li>
-                                <li><a href="">상영예정작</a></li>
-                                <li><a href="">아르떼</a></li>
-                                <li><a href="">국립극장</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">영화관</a>
-                            <ul class=submenu3>
-                                <li><a href="">스페셜관</a></li>
-                                <li><a href="">서울</a></li>
-                                <li><a href="">경기/인천</a></li>
-                                <li><a href="">충청/대전</a></li>
-                                <li><a href="">전라/광주</a></li>
-                                <li><a href="">경상/대구</a></li>
-                                <li><a href="">경상/부산/울산</a></li>
-                                <li><a href="">강원</a></li>
-                                <li><a href="">제주</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">이벤트</a>
-                            <ul class="submenu4">
-                                <li><a href="">홈</a></li>
-                                <li><a href="">영화</a></li>
-                                <li><a href="">시사회/무대인사</a></li>
-                                <li><a href="">HOT</a></li>
-                                <li><a href="">제휴할인</a></li>
-                                <li><a href="">우리동네영화관</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">스토어</a>
-                            <ul class="submenu5">
-                                <li><a href="">베스트</a></li>
-                                <li><a href="">관람권</a></li>
-                                <li><a href="">스낵음료</a></li>
-                                <li><a href="">포토카드</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href=""></a>
-                            <ul></ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </header>
-<!-- 메인 -->
-<!-- 마이페이지 -->
-<div class="mypage-warp">
-    <div class="mypage">
-        <!-- 마이페이지 버튼들 -->
-        <ul class="mypage-menu">
-            <!-- 정보 수정 -->
-            <li>
-                <button class="tab-update">
-                    <span class="img"><img src="resources/image/ic_my_menu_1.png" alt=""></span>
-                    <span class="myChange">회원 정보 변경</span>
-                </button>
-            </li>
-            <!-- 탈퇴 -->
-            <li>
-                <button class="tab-delete">
-                    <span class="img"><img src="resources/image/ic_my_menu_5.png" alt=""></span>
-                    <span class="myChange2">회원 탈퇴</span>
-                </button>
-            </li>
-        </ul>
-    </div>
-<!-- 회원 정보 수정 -->
-    <div class="userChange">
-        <h3>회원 정보수정</h3>
-        <p class="tip">
-          회원 정보입력
-        </p>
-        <!-- 수정 정보 목록 -->
-          <div class="user-update">
-            <label for="" name="id" id="id" style="padding-left: 65px;">ID</label> <input type="text" placeholder="ID를 입력해주세요.">
-            <hr/>
-            <label for="" name="pw" id="pw" style="padding-left: 55px;">PW</label> <input type="text" placeholder="PW를 입력해주세요.">
-            <hr/>
-            <label for="" name="username" id="username" style="padding-left: 47px;">이름</label> <input type="text" placeholder="이름을 입력해주세요.">
-            <hr/>
-            <label for="" name="phone" id="phone">휴대폰번호</label> <input type="text" placeholder="휴대폰번호를 입력해주세요."> <button class="btn-phone">인증</button>
-            <hr/>
-            <label for="" name="birth" id="birth" style="padding-left: 15px;">생년월일</label>
-            <select id="year-select"></select>
-            <select id="month-select"></select>
-            <select id="day-select"></select>
-            <hr/>
-            <label for="" id="address" style="padding-left: 45px;">주소</label>
-            <input type="text" name= "zipcode" id="postcode" placeholder="우편번호를 입력하세요">
-            <button class="btn-addr" onclick="searchZip()">우편번호검색</button>
-            <input type="text" name="addr1" id="defaultAddress" placeholder="기본주소 입력"  class="form-control" style=width:300px;/>
-            <input type="text" name="addr2"  placeholder="상세주소 입력" class="form-control"  style=width:200px;/>
-            <hr/>
-          </div>
-          <!-- 하단 설명 -->
-          <ul class="non-list">
-            <li>- 필수 정보에 대해 정확히 확인해 주시기 바랍니다.</li>
-          </ul>
-          <!-- 하단 버튼 -->
-          <div class="update-btn-center">
-            <button class="cancle-btn">취소</button>
-            <button class="update-btn">완료</button>
-        </div>
-    </div>
-<!-- 회원 탈퇴 -->
-    <div class="userWithdraw">
-        <!-- 회원탈퇴 크게 -->
-        <div class="toparea">
-            <h3>회원탈퇴</h3>
-            <div class="title">
-                회원탈퇴전
-            </div>
-            <div class="headline">
-                꼭 유의사항을 확인해주세요.
-            </div>
-        </div>
-        <!-- 탈퇴할 계정 선택 -->
-        <div class="user-delete">
-            <h3 class="sub-underline">아이디 선택</h3>
-            <div class="id-check">
-                <input type="checkbox" name="" id="">
-                <label for="">여기에 아이디 받아와서 써지게</label>
-            </div>
-        </div>
-        <!-- 탈퇴 시 유의사항 설명 -->
-        <div class="delete-precaution">
-            <h3 class="sub-underline2">유의사항</h3>
-            <div class="row">
-                <div class="warning">
-                    <p>- 탈퇴 시, 사용하시던 포인트 및 쿠폰 등은 복원할 수 없습니다.</p>
-                    <p>- 진행중인 예약 또는 이용중인 서비스가 있을 경우 탈퇴가 불가합니다.</p>
-                    <p>- 탈퇴 즉시 개인정보가 삭제되면, 어떠한 방법으로도 복원할 수 없습니다.</p>
-                    <p>- 아이디를 탈퇴하시면 결제 취소가 불가능합니다.</p>
-                </div>
-            </div>
-        </div>
-        <!-- 하단 버튼 -->
-        <div class="delete-btn-center">
-            <button class="cancle-btn">취소</button>
-            <button class="delete-btn">탈퇴</button>
-        </div>
-    </div>
-</div>
-  
-    
-    <!-- 푸터 -->
-    <footer>
-        <div class="footer">
-            <div class="inner">
-                <span class="footerlogo">
-                    <img src="resources/image/logo3.png" alt="">
-                </span>
-                <ul class="footermenu">
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">이메일무단수집거부</a></li>
-                    <li><a href="#">영상정보처리기기 운영 및 관리방침</a></li>
-                    <li><a href="#">L.POINT회원안내</a></li>
-                    <li><a href="#">배정기준</a></li>
-                    <li><a href="#">채용안내</a></li>
-                    <li><a href="#">광고/임대문의</a></li>
-                    <li><a href="#">기업정보</a></li>
-                    <li><a href="#">사회적책임</a></li>
-                </ul>
-                <div class="address">
-                    <address>서울특별시 송파구 올림픽로 300 롯데월드타워 27층</address>
-                    <span class="bar">고객센터 1544-8855 (유료)</span><br>
-                    <span class="bar">대표이사 4조</span>
-                    <span class="bar">사업자등록번호 111-11-11111</span>
-                    <span class="bar">통신판매업신고번호 제1111호</span>
-                    <span class="bar">개인정보보호책임자 4조</span>
-                </div>
-                <p class="copyright" style="font-size: 12px;">COPYRIGHT LOTTE CINEMA ALL RIGHT RESERVED.</p>
-            </div>
-        </div>
-    </footer>
+	<!-- 헤더 -->
+	<header>
+		<div id="header_section" class="header">
+			<h1 class="logo">
+				<a href="index.html"></a>
+			</h1>
+			<div class="gnb">
+				<ul class="menu1">
+					<li><a href=""><img src="resources/image/페이스북.png"
+							alt="페이스북로고"></a></li>
+					<li><a href="" style="width: 35px"><img
+							src="resources/image/유튜브.png" alt="유튜브로고"></a></li>
+					<li><a href=""><img src="resources/image/인스타그램.png"
+							alt="인스타그램로고"></a></li>
+				</ul>
+				<ul class="menu2">
+					<li><a href="">멤버십</a></li>
+					<li><a href="">고객센터</a></li>
+					<li><a href="">단체관람/대관문의</a></li>
+					<li><a href="${pageContext.request.contextPath}/logout.do">로그아웃</a></li>
+				</ul>
+				<ul class="menu3">
+					<li><a href="${pageContext.request.contextPath}/join.do">회원가입</a></li>
+					<li><a href="">바로예매</a></li>
+					<li><a href=""><img src="resources/image/햄버거버튼.png"></a></li>
+				</ul>
+				<div class="nav">
+					<ul class="submenu">
+						<li><a href="">예매</a>
+							<ul class="submenu1">
+								<li><a href="">예매하기</a></li>
+								<li><a href="">상영시간표</a></li>
+								<li><a href="">할인안내</a></li>
+							</ul></li>
+						<li><a href="">영화</a>
+							<ul class="submenu2">
+								<li><a href="">홈</a></li>
+								<li><a href="">현재상영작</a></li>
+								<li><a href="">상영예정작</a></li>
+								<li><a href="">아르떼</a></li>
+								<li><a href="">국립극장</a></li>
+							</ul></li>
+						<li><a href="">영화관</a>
+							<ul class=submenu3>
+								<li><a href="">스페셜관</a></li>
+								<li><a href="">서울</a></li>
+								<li><a href="">경기/인천</a></li>
+								<li><a href="">충청/대전</a></li>
+								<li><a href="">전라/광주</a></li>
+								<li><a href="">경상/대구</a></li>
+								<li><a href="">경상/부산/울산</a></li>
+								<li><a href="">강원</a></li>
+								<li><a href="">제주</a></li>
+							</ul></li>
+						<li><a href="">이벤트</a>
+							<ul class="submenu4">
+								<li><a href="">홈</a></li>
+								<li><a href="">영화</a></li>
+								<li><a href="">시사회/무대인사</a></li>
+								<li><a href="">HOT</a></li>
+								<li><a href="">제휴할인</a></li>
+								<li><a href="">우리동네영화관</a></li>
+							</ul></li>
+						<li><a href="">스토어</a>
+							<ul class="submenu5">
+								<li><a href="">베스트</a></li>
+								<li><a href="">관람권</a></li>
+								<li><a href="">스낵음료</a></li>
+								<li><a href="">포토카드</a></li>
+							</ul></li>
+						<li><a href=""></a>
+							<ul></ul></li>
+					</ul>
+				</div>
+			</div>
+	</header>
+	<!-- 메인 -->
+	<!-- 마이페이지 -->
+	<div class="mypage-warp">
+		<div class="mypage">
+			<!-- 마이페이지 버튼들 -->
+			<ul class="mypage-menu">
+				<!-- 정보 수정 -->
+				<li>
+					<button class="tab-update">
+						<span class="img"><img
+							src="resources/image/ic_my_menu_1.png" alt=""></span> <span
+							class="myChange">회원 정보 변경</span>
+					</button>
+				</li>
+				<!-- 탈퇴 -->
+				<li>
+					<button class="tab-delete">
+						<span class="img"><img
+							src="resources/image/ic_my_menu_5.png" alt=""></span> <span
+							class="myChange2">회원 탈퇴</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+		<!-- 회원 정보 수정 -->
+		<div class="userChange">
+			<h3>회원 정보수정</h3>
+			<p class="tip">회원 정보입력</p>
+			<!-- 수정 정보 목록 -->
+			<div class="user-update">
+				<label for="" name="id" id="id" style="padding-left: 65px;">ID</label>
+				<input type="text" placeholder="ID를 입력해주세요." value="${userDto.id}">
+				<hr />
+				<label for="" name="pw" id="pw" style="padding-left: 55px;" >PW</label>
+				<input type="password" placeholder="PW를 입력해주세요." value="${userDto.pw }"s>
+				<hr />
+				<label for="" name="username" id="username"
+					style="padding-left: 47px;">이름</label> <input type="text"
+					placeholder="이름을 입력해주세요.">
+				<hr />
+				<label for="" name="phone" id="phone">휴대폰번호</label> <input
+					type="text" placeholder="휴대폰번호를 입력해주세요.">
+				<button class="btn-phone">인증</button>
+				<hr />
+				<label for="" name="birth" id="birth" style="padding-left: 15px;">생년월일</label>
+				<select id="year-select"></select> <select id="month-select"></select>
+				<select id="day-select"></select>
+				<hr />
+				<label for="" id="address" style="padding-left: 45px;">주소</label> <input
+					type="text" name="zipcode" id="postcode" placeholder="우편번호를 입력하세요">
+				<button class="btn-addr" onclick="searchZip()">우편번호검색</button>
+				<input type="text" name="addr1" id="defaultAddress"
+					placeholder="기본주소 입력" class="form-control" style="width: 300px;" />
+				<input type="text" name="addr2" placeholder="상세주소 입력"
+					class="form-control" style="width: 200px;" />
+				<hr />
+			</div>
+			<!-- 하단 설명 -->
+			<ul class="non-list">
+				<li>- 필수 정보에 대해 정확히 확인해 주시기 바랍니다.</li>
+			</ul>
+			<!-- 하단 버튼 -->
+			<div class="update-btn-center">
+				<button class="cancle-btn">취소</button>
+				<button class="update-btn">완료</button>
+			</div>
+		</div>
+		<!-- 회원 탈퇴 -->
+		<div class="userWithdraw">
+			<!-- 회원탈퇴 크게 -->
+			<div class="toparea">
+				<h3>회원탈퇴</h3>
+				<div class="title">회원탈퇴전</div>
+				<div class="headline">꼭 유의사항을 확인해주세요.</div>
+			</div>
+			<!-- 탈퇴할 계정 선택 -->
+			<div class="user-delete">
+				<h3 class="sub-underline">아이디 선택</h3>
+				<div class="id-check">
+					<input type="checkbox" name="" id=""> <label for="">여기에
+						아이디 받아와서 써지게</label>
+				</div>
+			</div>
+			<!-- 탈퇴 시 유의사항 설명 -->
+			<div class="delete-precaution">
+				<h3 class="sub-underline2">유의사항</h3>
+				<div class="row">
+					<div class="warning">
+						<p>- 탈퇴 시, 사용하시던 포인트 및 쿠폰 등은 복원할 수 없습니다.</p>
+						<p>- 진행중인 예약 또는 이용중인 서비스가 있을 경우 탈퇴가 불가합니다.</p>
+						<p>- 탈퇴 즉시 개인정보가 삭제되면, 어떠한 방법으로도 복원할 수 없습니다.</p>
+						<p>- 아이디를 탈퇴하시면 결제 취소가 불가능합니다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- 하단 버튼 -->
+			<div class="delete-btn-center">
+				<form action="${pageContext.request.contextPath}/member/delete.do">
+				<button class="cancle-btn">취소</button>
+				<button class="delete-btn">탈퇴</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+ 
 
-<!-- 자바 스크립트 -->
+	<!-- 푸터 -->
+	<footer>
+		<div class="footer">
+			<div class="inner">
+				<span class="footerlogo"> <img
+					src="resources/image/logo3.png" alt="">
+				</span>
+				<ul class="footermenu">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이메일무단수집거부</a></li>
+					<li><a href="#">영상정보처리기기 운영 및 관리방침</a></li>
+					<li><a href="#">L.POINT회원안내</a></li>
+					<li><a href="#">배정기준</a></li>
+					<li><a href="#">채용안내</a></li>
+					<li><a href="#">광고/임대문의</a></li>
+					<li><a href="#">기업정보</a></li>
+					<li><a href="#">사회적책임</a></li>
+				</ul>
+				<div class="address">
+					<address>서울특별시 송파구 올림픽로 300 롯데월드타워 27층</address>
+					<span class="bar">고객센터 1544-8855 (유료)</span><br> <span
+						class="bar">대표이사 4조</span> <span class="bar">사업자등록번호
+						111-11-11111</span> <span class="bar">통신판매업신고번호 제1111호</span> <span
+						class="bar">개인정보보호책임자 4조</span>
+				</div>
+				<p class="copyright" style="font-size: 12px;">COPYRIGHT LOTTE
+					CINEMA ALL RIGHT RESERVED.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- 자바 스크립트 -->
 <!-- 제이쿼리 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- lodash cdn -->

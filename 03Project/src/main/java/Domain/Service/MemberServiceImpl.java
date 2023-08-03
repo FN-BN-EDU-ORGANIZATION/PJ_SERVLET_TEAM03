@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import Domain.Dao.InterestDao;
 import Domain.Dao.InterestDaoImpl;
 import Domain.Dao.MemberDao;
@@ -34,18 +37,20 @@ public class MemberServiceImpl implements MemberService {
 	//회원 가입하기
 		@Override
 		public boolean memberJoin(MemberDto dto) throws Exception {  //테스트 통과 ok
+			dto.setRole("ROLE_USER");
 			int result = dao.insert(dto);
 			if(result > 0)
 				return true;
 			return false;
 		}
+		
+		
 		//회원 조회하기(전체) - 사서
 		@Override
-		public List<MemberDto> memberSearchList(String sid) throws Exception {  //테스트 통과 ok
-			String role = authService.getRole(sid);
-			if(role.equals("ROLE_MEMBER")) 
+		public List<MemberDto> memberSearchList(HttpServletRequest req) throws Exception {  //테스트 통과 ok
+			if(req.equals("ROLE_MEMBER")) 
 				return dao.select();
-			return null;
+			return null; 
 		}
 		//회원 조회하기(한명) - 사서
 		@Override
@@ -76,14 +81,13 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//회원 삭제하기
 		@Override
-		public boolean memberDelete(String id, String sid) throws Exception {
-			Session session = sessionMap.get(sid);
-			if(session != null && session.getId().equals(id)) {
-				int result = dao.delete(id);
-				if(result > 0)
-					return true;
-			}
-			return false;
+		public boolean memberDelete(HttpServletRequest req) throws Exception {
+			 
+			HttpSession session = req.getSession();
+			MemberDto dto = (MemberDto)session.getAttribute("userDto");
+			
+			int result =  dao.delete(dto.getId());
+			return result>0;
 		}
 		
 		//관심 등록
@@ -142,5 +146,7 @@ public class MemberServiceImpl implements MemberService {
 			}
 			return false;
 		}
+		
+
 		
 }

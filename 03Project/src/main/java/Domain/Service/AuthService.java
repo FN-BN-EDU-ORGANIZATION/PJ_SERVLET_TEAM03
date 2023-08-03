@@ -1,7 +1,5 @@
 package Domain.Service;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 public interface AuthService {
@@ -18,5 +16,7 @@ public interface AuthService {
 
 	//로그인
 	boolean login(HttpServletRequest req) throws Exception;
+
+
 
 }

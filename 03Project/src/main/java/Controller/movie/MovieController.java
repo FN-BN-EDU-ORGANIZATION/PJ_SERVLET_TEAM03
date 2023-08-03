@@ -14,12 +14,8 @@ import Domain.Service.MovieServiceImpl;
 
 public class MovieController implements SubController {
 	
-	private MovieService service;
+	private MovieService service = MovieServiceImpl.getInstance();
 	
-	public MovieController() {
-		service = MovieServiceImpl.getInstance();
-	}
-
 	//1 Select , 2 Insert , 3 Update , 4 Delete, 5 DayUpdate
 	public Map<String, Object> execute(int serviceNo, Map<String, Object> param) {
 		
@@ -33,8 +29,9 @@ public class MovieController implements SubController {
 			System.out.println("Movie_Select Block");
 			Map<String,Object> result = new HashMap();
 			result.put("result", list);
-			return result;
+			return result; 
 		
+			
 		} else if(serviceNo == 2) {
 			Integer MovieCd = (Integer) param.get("MovieCd");
 			String MovieNm = (String) param.get("MovieNm");

@@ -295,7 +295,7 @@ input[type="checkbox"]:checked + label::before {
 .mypage-warp>.userWithdraw>.delete-btn-center {
     text-align: center;
 }
-.mypage-warp>.userWithdraw>.delete-btn-center>.cancle-btn {
+.mypage-warp>.userWithdraw>.delete-btn-center>form>.cancle-btn {
     display: inline-block;
     font-weight: inherit;
     font-size: 15px;
@@ -310,7 +310,7 @@ input[type="checkbox"]:checked + label::before {
     line-height: 40px;
     overflow: hidden;
 }
-.mypage-warp>.userWithdraw>.delete-btn-center>.delete-btn {
+.mypage-warp>.userWithdraw>.delete-btn-center>form>.delete-btn {
     display: inline-block;
     font-weight: inherit;
     font-size: 15px;

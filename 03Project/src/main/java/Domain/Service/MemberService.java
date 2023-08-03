@@ -12,8 +12,6 @@ public interface MemberService {
 	//회원 가입하기
 	boolean memberJoin(MemberDto dto) throws Exception;
 
-	//회원 조회하기(전체) - 사서
-	List<MemberDto> memberSearchList(String sid) throws Exception;
 
 	//회원 조회하기(한명) - 사서
 	MemberDto memberSearchOne(String sid, String id) throws Exception;
@@ -25,7 +23,7 @@ public interface MemberService {
 	boolean memberUpdate(MemberDto dto, String sid) throws Exception;
 
 	//회원 삭제하기
-	boolean memberDelete(String id, String sid) throws Exception;
+	boolean memberDelete(HttpServletRequest req) throws Exception;
 
 	//관심 등록
 	boolean ImovieJoin(InterestDto dto, String sid) throws Exception;
@@ -44,6 +42,8 @@ public interface MemberService {
 
 	//관심 삭제하기
 	boolean ImovieDelete(int interestCd, String id, String sid) throws Exception;
+
+	List<MemberDto> memberSearchList(HttpServletRequest req) throws Exception;
 
 
 }

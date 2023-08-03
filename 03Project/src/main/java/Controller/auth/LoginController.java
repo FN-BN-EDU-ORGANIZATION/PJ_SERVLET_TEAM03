@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import Controller.SubController;
 import Domain.Service.AuthService;
@@ -48,11 +47,9 @@ public class LoginController implements SubController {
 			}
 			boolean isLogin=false;
 			isLogin=service.login(req);
-			HttpSession session = req.getSession();
-			String role = (String)session.getAttribute("ROLE");
 			if(isLogin)
 			{
-				//main.do 이동 - Redirect
+				//user.do 이동 - Redirect
 				resp.sendRedirect(req.getContextPath()+"/user.do");
 			}
 			else

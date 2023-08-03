@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import Controller.auth.LoginController;
 import Controller.auth.LogoutController;
 import Controller.member.MemberAddController;
-import Controller.member.MemberController;
 import Controller.member.MemberDeleteController;
+import Controller.member.MemberPageController;
 import Controller.member.MemberSearchController;
 import Controller.member.MemberUpdateController;
 import Controller.member.interest.InterestAddController;
@@ -45,9 +45,10 @@ public class FrontController extends HttpServlet {
 		
 		//member
 		map.put(projectPath+"/member/search.do", new MemberSearchController());
-		map.put(projectPath+"/join.do", new MemberAddController()); 		//Join
+		map.put(projectPath+"/join.do", new MemberAddController()); 				//Join
 		map.put(projectPath+"/member/update.do", new MemberUpdateController());
 		map.put(projectPath+"/member/delete.do", new MemberDeleteController());
+		map.put(projectPath+"/user.do", new MemberPageController());
 		
 		//member.interest
 		map.put(projectPath+"/interest/search.do", new InterestSearchController());
@@ -62,9 +63,6 @@ public class FrontController extends HttpServlet {
 		//main
 		map.put(projectPath+"/main.do", new MainController());
 		
-		//user
-		map.put(projectPath+"/user.do", new UserController());
-		map.put(projectPath+"/member.do", new MemberController()); 
 		
 		
 	}

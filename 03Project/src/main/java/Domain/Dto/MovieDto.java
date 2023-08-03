@@ -1,10 +1,10 @@
 package Domain.Dto;
 
 public class MovieDto {
-	private int movieCd;
+	private String movieCd;
 	private String movieNm;
 	private String movieOp;
-	private double movieTn;
+	private String movieTn;
 	private String movieGs;
 	private String movieOv;
 	private String moviePo;
@@ -17,7 +17,7 @@ public class MovieDto {
 				+ ", movieGs=" + movieGs + ", movieOv=" + movieOv + ", moviePo=" + moviePo + "]";
 	}
 	
-	public MovieDto(int movieCd, String movieNm, String movieOp, double movieTn, String movieGs, String movieOv,
+	public MovieDto(String movieCd, String movieNm, String movieOp, String movieTn, String movieGs, String movieOv,
 			String moviePo) {
 		super();
 		this.movieCd = movieCd;
@@ -29,10 +29,11 @@ public class MovieDto {
 		this.moviePo = moviePo;
 	}
 	
-	public int getMovieCd() {
+
+	public String getMovieCd() {
 		return movieCd;
 	}
-	public void setMovieCd(int movieCd) {
+	public void setMovieCd(String movieCd) {
 		this.movieCd = movieCd;
 	}
 	public String getMovieNm() {
@@ -47,10 +48,10 @@ public class MovieDto {
 	public void setMovieOp(String movieOp) {
 		this.movieOp = movieOp;
 	}
-	public double getMovieTn() {
+	public String getMovieTn() {
 		return movieTn;
 	}
-	public void setMovieTn(double movieTn) {
+	public void setMovieTn(String movieTn) {
 		this.movieTn = movieTn;
 	}
 	public String getMovieGs() {

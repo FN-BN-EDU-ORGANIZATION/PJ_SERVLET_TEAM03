@@ -9,10 +9,6 @@
 <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
-<!-- 네이버 폰트 -->
-<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 <style>
 .first {
 	margin-top: 50px;
@@ -116,7 +112,7 @@
             </div>
         </div>
     </header>
-	<form id="joinfrm" name="joinfrm" action="" method="post">
+	<form id="joinfrm" name="joinfrm" action="${pageContext.request.contextPath}/join.do" method="post">
 		<div style="width: 900px; margin-left: 550px; margin-top: -40px;">
 			<h2 style="margin-top: 50px;">회원가입</h2>
 			<br>
@@ -130,7 +126,7 @@
 			<hr>
 			<div>
 				<label for="name"><span class="con">이름 : </span></label><input
-					name="username" type="text" placeholder="한글 또는 영문">
+					type="text" placeholder="한글 또는 영문">
 				<hr>
 			</div>
 			<div>
@@ -175,17 +171,17 @@
 			<div>
 			<div class="id">
 				<label for="id"><span class="con">ID : </span></label><input
-					type="text">
+					type="text" name="id">
 			</div>
 			<br>
 			<div>
 				<label for="pw"><span class="con">PASSWORD : </span></label><input
-					type="password" placeholder="********">
+					type="password" placeholder="********"  name="pw">
 			</div>
 			</div>
 			<div style="display: flex; justify-content: center; margin-top: 40px;">
 				<input type="button" style="background-color: red;" value="취소">
-				<input type="button" value="회원가입" style="margin-left: 5px;">
+				<input type="submit" value="회원가입"  style="margin-left: 5px;">
 			</div>
 		</div>
 	</form>
@@ -220,28 +216,21 @@
         </div>
     </footer>
     
-<!-- 자바 스크립트 -->
-<!-- 제이쿼리 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- lodash cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<!-- 우편 검색 -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    
-<script defer>
+    <script defer>
 	/* 자바스크립트 수준의 유효성 체크  */
-	const isValid=function(){
+	/* const isValid=function(){
 		const joinfrm = document.joinfrm;
 		//alert("[JS] func isValid");
 		//email 공백여부 등 Validation Check
 
 		joinfrm.submit();
-	}
-</script>
-
-<script defer>
+	} */
+	</script>
+    
+    <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script defer>
+	
+	
 	const searchZip=function()
 	{
 	    new daum.Postcode({
@@ -267,6 +256,5 @@
 	    }).open();
 	}
 </script>
-
 </body>
 </html>
