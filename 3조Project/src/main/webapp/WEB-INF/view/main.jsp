@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<%-- 
+<%--
 <h1>MAIN</h1>
 <hr />
 <c:if test="${empty ROLE}">
