@@ -190,10 +190,9 @@
 			<!-- 하단 버튼 -->
 			<div class="delete-btn-center">
 				<form action="${pageContext.request.contextPath}/member/delete.do">
-				<button class="cancle-btn">취소</button>
-				<button class="delete-btn">탈퇴</button>
+					<button class="cancle-btn">취소</button>
+					<button class="delete-btn">탈퇴</button>
 				</form>
-				
 			</div>
 		</div>
 	</div>

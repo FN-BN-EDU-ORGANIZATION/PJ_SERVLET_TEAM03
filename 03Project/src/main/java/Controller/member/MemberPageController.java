@@ -19,7 +19,7 @@ public class MemberPageController implements SubController{
 			if(role.equals("ROLE_USER")){
 				req.getRequestDispatcher("/WEB-INF/view/user.jsp").forward(req, resp);
 			}else if(role.equals("ROLE_MEMBER")) {
-				req.getRequestDispatcher("/WEB-INF/view/main.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/view/member.jsp").forward(req, resp);
 			}else if(role.equals("ROLE_ADMIN")) {	
 				
 			}

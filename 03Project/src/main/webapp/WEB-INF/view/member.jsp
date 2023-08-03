@@ -202,9 +202,11 @@
             </div>
         </div>
         <!-- 하단 버튼 -->
-        <div class="delete-btn-center">
-            <button class="cancle-btn">취소</button>
-            <button class="delete-btn">탈퇴</button>
+        <div class="delete-btn-center" >
+            <form action="${pageContext.request.contextPath}/member/delete.do">
+				<button class="cancle-btn">취소</button>
+				<button class="delete-btn">탈퇴</button>
+			</form>
         </div>
     </div>
  <!-- 회원 정보 조회 -->

@@ -70,5 +70,3 @@ public class MemberAddController implements SubController{
 
 	
 }
-
-
