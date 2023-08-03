@@ -59,6 +59,7 @@ public class AuthServiceImpl implements AuthService {
 			System.out.println("login func's session : " + session);
 			session.setAttribute("ID", id);
 			session.setAttribute("ROLE", dbDto.getRole());
+			session.setAttribute("userDto", dbDto);
 			session.setMaxInactiveInterval(60*30);
 			return true;
 		}

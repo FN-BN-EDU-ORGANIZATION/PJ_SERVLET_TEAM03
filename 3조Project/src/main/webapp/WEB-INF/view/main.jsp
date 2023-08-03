@@ -12,6 +12,14 @@
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
  <!-- Swiper -->
  <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBarunGothicYetHangul.css" rel="stylesheet">
+ <!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <style>
+        .swiper-slide{
+            width:300px;
+            height:380px;
+        }
+    </style>
 </head>
 <body>
 <%-- 
@@ -193,20 +201,26 @@
             </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            var swiper = new Swiper('.mainmovie.swiper-container', {
-                direction: 'horizontal',
-                autoplay: {
-                    delay: 1000,
-                },
-                loop: true,
-                slidesPerView: 5,
-                // spaceBetween: 'auto',
-                centeredSlides: true,
-        })
-    });
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- lodash cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+     document.addEventListener("DOMContentLoaded", function(){
+         var swiper = new Swiper('.mainmovie.swiper-container', {
+             direction: 'horizontal',
+             autoplay: {
+                 delay: 1000,
+             },
+             loop: true,
+             slidesPerView: 5,
+             spaceBetween: 10,
+             centeredSlides: true,
+     })
+ });
      // TOP 누르면 최상단 이동
      const toTopBtn_el = document.getElementById('to_top');
         toTopBtn_el.addEventListener('click',function(){

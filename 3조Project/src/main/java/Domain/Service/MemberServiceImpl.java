@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import Domain.Dao.InterestDao;
 import Domain.Dao.InterestDaoImpl;
@@ -80,14 +81,13 @@ public class MemberServiceImpl implements MemberService {
 		}
 		//회원 삭제하기
 		@Override
-		public boolean memberDelete(String id, String sid) throws Exception {
-			Session session = sessionMap.get(sid);
-			if(session != null && session.getId().equals(id)) {
-				int result = dao.delete(id);
-				if(result > 0)
-					return true;
-			}
-			return false;
+		public boolean memberDelete(HttpServletRequest req) throws Exception {
+			 
+			HttpSession session = req.getSession();
+			MemberDto dto = (MemberDto)session.getAttribute("userDto");
+			
+			int result =  dao.delete(dto.getId());
+			return result>0;
 		}
 		
 		//관심 등록

@@ -11,6 +11,8 @@ public class MemberPageController implements SubController{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
+		
+		//Role권한코드
 		try {
 			HttpSession session = req.getSession();
 			String role = (String)session.getAttribute("ROLE");

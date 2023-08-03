@@ -123,10 +123,10 @@
 			<!-- 수정 정보 목록 -->
 			<div class="user-update">
 				<label for="" name="id" id="id" style="padding-left: 65px;">ID</label>
-				<input type="text" placeholder="ID를 입력해주세요.">
+				<input type="text" placeholder="ID를 입력해주세요." value="${userDto.id}">
 				<hr />
-				<label for="" name="pw" id="pw" style="padding-left: 55px;">PW</label>
-				<input type="text" placeholder="PW를 입력해주세요.">
+				<label for="" name="pw" id="pw" style="padding-left: 55px;" >PW</label>
+				<input type="password" placeholder="PW를 입력해주세요." value="${userDto.pw }"s>
 				<hr />
 				<label for="" name="username" id="username"
 					style="padding-left: 47px;">이름</label> <input type="text"
@@ -189,12 +189,15 @@
 			</div>
 			<!-- 하단 버튼 -->
 			<div class="delete-btn-center">
+				<form action="${pageContext.request.contextPath}/member/delete.do">
 				<button class="cancle-btn">취소</button>
 				<button class="delete-btn">탈퇴</button>
+				</form>
+				
 			</div>
 		</div>
 	</div>
-
+ 
 
 	<!-- 푸터 -->
 	<footer>
@@ -229,159 +232,147 @@
 	</footer>
 
 	<!-- 자바 스크립트 -->
-	<!-- 제이쿼리 -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- lodash cdn -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
-		integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<!-- Swiper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-	<!-- 우편 검색 -->
-	<script
-		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script>
-		//회원 비회원 전환 버튼
-		const updateBtn = document.querySelector(".tab-update");
-		const deleteBtn = document.querySelector(".tab-delete");
-		const selectBtn = document.querySelector(".tab-select");
-		const ChangeBox = document.querySelector(".userChange");
-		const WirhdrawBox = document.querySelector(".userWithdraw");
-		const SearchBox = document.querySelector(".userSearch");
+<!-- 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- lodash cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- 우편 검색 -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+     //회원 비회원 전환 버튼
+    const updateBtn = document.querySelector(".tab-update");
+    const deleteBtn = document.querySelector(".tab-delete");
+    const ChangeBox = document.querySelector(".userChange");
+    const WirhdrawBox = document.querySelector(".userWithdraw");
 
-		updateBtn.addEventListener("click", function() {
-			ChangeBox.style.display = "block";
-			SearchBox.style.display = "none";
-			WirhdrawBox.style.display = "none";
-		});
+    updateBtn.addEventListener("click", function() {
+      ChangeBox.style.display = "block";
+      WirhdrawBox.style.display = "none";
+    });
 
-		deleteBtn.addEventListener("click", function() {
-			ChangeBox.style.display = "none";
-			SearchBox.style.display = "none";
-			WirhdrawBox.style.display = "block";
-		});
+    deleteBtn.addEventListener("click", function() {
+      WirhdrawBox.style.display = "block";
+      ChangeBox.style.display = "none";
+    });
 
-		selectBtn.addEventListener("click", function() {
-			SearchBox.style.display = "block";
-			ChangeBox.style.display = "none";
-			WirhdrawBox.style.display = "none";
-		});
+    // 생년월일 선택자
+    const yearSelect = document.getElementById('year-select');
+    const monthSelect = document.getElementById('month-select');
+    const daySelect = document.getElementById('day-select');
 
-		// 생년월일 선택자
-		const yearSelect = document.getElementById('year-select');
-		const monthSelect = document.getElementById('month-select');
-		const daySelect = document.getElementById('day-select');
+        // 연도 범위 설정 (예: 1900-2023)
+      const startYear = 2023;
+      const endYear = 1900;
 
-		// 연도 범위 설정 (예: 1900-2023)
-		const startYear = 2023;
-		const endYear = 1900;
+        // 연도 <select> 채우기
+      for (let year = startYear; year >= endYear; year--) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+      }
 
-		// 연도 <select> 채우기
-		for (let year = startYear; year >= endYear; year--) {
-			const option = document.createElement('option');
-			option.value = year;
-			option.textContent = year;
-			yearSelect.appendChild(option);
-		}
+        // 월 <select> 채우기
+      for (let month = 1; month <= 12; month++) {
+        const option = document.createElement('option');
+        option.value = month;
+        option.textContent = month;
+        monthSelect.appendChild(option);
+      }
 
-		// 월 <select> 채우기
-		for (let month = 1; month <= 12; month++) {
-			const option = document.createElement('option');
-			option.value = month;
-			option.textContent = month;
-			monthSelect.appendChild(option);
-		}
+        // 일 <select> 채우기
+      function fillDaySelect(days) {
+        daySelect.innerHTML = '';
+        for (let day = 1; day <= days; day++) {
+          const option = document.createElement('option');
+          option.value = day;
+          option.textContent = day;
+          daySelect.appendChild(option);
+        }
+      }
 
-		// 일 <select> 채우기
-		function fillDaySelect(days) {
-			daySelect.innerHTML = '';
-			for (let day = 1; day <= days; day++) {
-				const option = document.createElement('option');
-				option.value = day;
-				option.textContent = day;
-				daySelect.appendChild(option);
-			}
-		}
+        // 기본값으로 31일로 설정
+      fillDaySelect(31);
 
-		// 기본값으로 31일로 설정
-		fillDaySelect(31);
+        // 월을 선택하면 대응하는 일 수로 변경
+      monthSelect.addEventListener('change', function () {
+        const selectedMonth = this.value;
+        let days;
+        if (selectedMonth === '2') {
+          days = 28; // 윤년 계산은 생략
+        } else if (['4', '6', '9', '11'].includes(selectedMonth)) {
+          days = 30;
+        } else {
+          days = 31;
+        }
+        fillDaySelect(days);
+      });
 
-		// 월을 선택하면 대응하는 일 수로 변경
-		monthSelect.addEventListener('change', function() {
-			const selectedMonth = this.value;
-			let days;
-			if (selectedMonth === '2') {
-				days = 28; // 윤년 계산은 생략
-			} else if ([ '4', '6', '9', '11' ].includes(selectedMonth)) {
-				days = 30;
-			} else {
-				days = 31;
-			}
-			fillDaySelect(days);
-		});
+      // 우편 검색
+      const searchZip=function()
+      {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                var addr='';
 
-		// 우편 검색
-		const searchZip = function() {
-			new daum.Postcode({
-				oncomplete : function(data) {
-					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-					var addr = '';
+                //사용자가 도로명 주소 선택
+                if(data.userSelectedType==='R')
+                {
+                  addr=data.roadAddress;
+                }
+                else //사용자가 지번 주소 선택 'J'
+                {
+                  addr=data.jibunAddress;
+                }
+                document.getElementById('postcode').value=data.zonecode;
+                document.getElementById('defaultAddress').value=addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("addr2").focus();
+            }
+        }).open();
+      }
 
-					//사용자가 도로명 주소 선택
-					if (data.userSelectedType === 'R') {
-						addr = data.roadAddress;
-					} else //사용자가 지번 주소 선택 'J'
-					{
-						addr = data.jibunAddress;
-					}
-					document.getElementById('postcode').value = data.zonecode;
-					document.getElementById('defaultAddress').value = addr;
-					// 커서를 상세주소 필드로 이동한다.
-					document.getElementById("addr2").focus();
-				}
-			}).open();
-		}
+    // // TOP 누르면 최상단 이동
+    // const toTopBtn_el = document.getElementById('to_top');
+    //     toTopBtn_el.addEventListener('click',function(){
+    //         window.scrollTo({top:0,behavior:'smooth'})
+    //     })
 
-		// // TOP 누르면 최상단 이동
-		// const toTopBtn_el = document.getElementById('to_top');
-		//     toTopBtn_el.addEventListener('click',function(){
-		//         window.scrollTo({top:0,behavior:'smooth'})
-		//     })
+    // // 스크롤시 메뉴 따라오기
+    // // 좌측 광고
+    // $(window).scroll(function(){
+    // var scrollTop = $(document).scrollTop();
+    // if (scrollTop < 300) {
+    //   scrollTop = 300;
+    // }
+    //   $(".left_section").stop();
+    //   $(".left_section").animate( { "top" : scrollTop });
+    // });
 
-		// // 스크롤시 메뉴 따라오기
-		// // 좌측 광고
-		// $(window).scroll(function(){
-		// var scrollTop = $(document).scrollTop();
-		// if (scrollTop < 300) {
-		//   scrollTop = 300;
-		// }
-		//   $(".left_section").stop();
-		//   $(".left_section").animate( { "top" : scrollTop });
-		// });
+    // // 우측 퀵메뉴
+    // $(window).scroll(function(){
+    // var scrollTop = $(document).scrollTop();
+    // if (scrollTop < 200) {
+    //   scrollTop = 200;
+    // }
+    //   $(".quick_section").stop();
+    //   $(".quick_section").animate( { "top" : scrollTop });
+    // });
+    // // x표시 광고 끄기
+    // // 버튼과 광고 요소 선택
+    // const bannerCloseButton = document.querySelector('.banner_close');
+    // const leftBanner = document.querySelector('.left_banner');
 
-		// // 우측 퀵메뉴
-		// $(window).scroll(function(){
-		// var scrollTop = $(document).scrollTop();
-		// if (scrollTop < 200) {
-		//   scrollTop = 200;
-		// }
-		//   $(".quick_section").stop();
-		//   $(".quick_section").animate( { "top" : scrollTop });
-		// });
-		// // x표시 광고 끄기
-		// // 버튼과 광고 요소 선택
-		// const bannerCloseButton = document.querySelector('.banner_close');
-		// const leftBanner = document.querySelector('.left_banner');
+    // // 버튼 클릭 시 광고 숨기기
+    // bannerCloseButton.addEventListener('click', function () {
+    //   leftBanner.style.display = 'none';
+    //   bannerCloseButton.style.display = 'none';
+    // });
 
-		// // 버튼 클릭 시 광고 숨기기
-		// bannerCloseButton.addEventListener('click', function () {
-		//   leftBanner.style.display = 'none';
-		//   bannerCloseButton.style.display = 'none';
-		// });
-	</script>
+</script>
 
 </body>
 </html>

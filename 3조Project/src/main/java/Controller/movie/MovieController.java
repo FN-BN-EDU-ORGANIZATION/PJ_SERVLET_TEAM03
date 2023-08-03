@@ -29,7 +29,7 @@ public class MovieController implements SubController {
 			System.out.println("Movie_Select Block");
 			Map<String,Object> result = new HashMap();
 			result.put("result", list);
-			return result;
+			return result; 
 		
 			
 		} else if(serviceNo == 2) {

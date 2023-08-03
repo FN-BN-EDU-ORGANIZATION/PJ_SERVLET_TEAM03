@@ -26,15 +26,18 @@ public class MemberAddController implements SubController{
 				return ;
 			}
 			
+			
+			//POST
 			//01 파라미터
-			String id = req.getParameter("email");
-			String pw = req.getParameter("pwd");
+			String id = req.getParameter("id");
+			String pw = req.getParameter("pw");
 			
 			
 			//02 유효성
 			if(!isValid(req.getParameterMap())) {
 				req.setAttribute("msg", "유효성체크 오류");
 				req.getRequestDispatcher("/WEB-INF/view/member/join.jsp").forward(req, resp);
+				return ;
 			}
 			//03 서비스
 			MemberDto dto = new MemberDto();
@@ -45,7 +48,9 @@ public class MemberAddController implements SubController{
 			
 			//04 뷰로 이동
 			if(isjoin) {
+				System.out.println("isJoin True!!" + req.getContextPath());
 				resp.sendRedirect(req.getContextPath()+ "/login.do");
+				return ;
 			}else {
 				req.setAttribute("msg", "회원가입 실패..");
 				req.getRequestDispatcher("/WEB-INF/view/member/join.jsp").forward(req, resp);
@@ -60,7 +65,7 @@ public class MemberAddController implements SubController{
 
 	private boolean isValid(Map<String, String[]> parameterMap) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	

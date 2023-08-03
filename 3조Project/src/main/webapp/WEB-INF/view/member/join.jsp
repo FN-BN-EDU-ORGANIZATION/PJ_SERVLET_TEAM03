@@ -112,7 +112,7 @@
             </div>
         </div>
     </header>
-	<form id="joinfrm" name="joinfrm" action="" method="post">
+	<form id="joinfrm" name="joinfrm" action="${pageContext.request.contextPath}/join.do" method="post">
 		<div style="width: 900px; margin-left: 550px; margin-top: -40px;">
 			<h2 style="margin-top: 50px;">회원가입</h2>
 			<br>
@@ -171,17 +171,17 @@
 			<div>
 			<div class="id">
 				<label for="id"><span class="con">ID : </span></label><input
-					type="text">
+					type="text" name="id">
 			</div>
 			<br>
 			<div>
 				<label for="pw"><span class="con">PASSWORD : </span></label><input
-					type="password" placeholder="********">
+					type="password" placeholder="********"  name="pw">
 			</div>
 			</div>
 			<div style="display: flex; justify-content: center; margin-top: 40px;">
 				<input type="button" style="background-color: red;" value="취소">
-				<input type="button" value="회원가입" style="margin-left: 5px;">
+				<input type="submit" value="회원가입"  style="margin-left: 5px;">
 			</div>
 		</div>
 	</form>
@@ -218,13 +218,13 @@
     
     <script defer>
 	/* 자바스크립트 수준의 유효성 체크  */
-	const isValid=function(){
+	/* const isValid=function(){
 		const joinfrm = document.joinfrm;
 		//alert("[JS] func isValid");
 		//email 공백여부 등 Validation Check
 
 		joinfrm.submit();
-	}
+	} */
 	</script>
     
     <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

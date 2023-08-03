@@ -23,7 +23,7 @@ public interface MemberService {
 	boolean memberUpdate(MemberDto dto, String sid) throws Exception;
 
 	//회원 삭제하기
-	boolean memberDelete(String id, String sid) throws Exception;
+	boolean memberDelete(HttpServletRequest req) throws Exception;
 
 	//관심 등록
 	boolean ImovieJoin(InterestDto dto, String sid) throws Exception;
