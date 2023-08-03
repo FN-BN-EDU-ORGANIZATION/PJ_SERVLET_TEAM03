@@ -74,9 +74,6 @@ public class AuthServiceImpl implements AuthService {
 			return true;
 		}
 		
-		
-		
-		
 		//역할반환함수
 		@Override
 		public String getRole(String sid) {

@@ -1,5 +1,6 @@
 package Controller.movie;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,13 @@ public class MovieAddController implements SubController{
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		System.out.println("MovieAddController execute");
 		
-		PrintWriter out = resp.getWriter();
+		PrintWriter out = null;
+		try {
+			out = resp.getWriter();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//01 파라미터
 		String MovieCd = req.getParameter("MovieCd");
 		String MovieNm = req.getParameter("MovieNm");
@@ -42,7 +49,7 @@ public class MovieAddController implements SubController{
 		
 		Boolean rValue = false;
 		try {
-			rValue = service.addMovie(dto, sid);
+			rValue = service.addMovie(dto, req);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

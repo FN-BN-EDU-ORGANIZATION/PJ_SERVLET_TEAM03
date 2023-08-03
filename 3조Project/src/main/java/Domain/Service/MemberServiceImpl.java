@@ -47,8 +47,7 @@ public class MemberServiceImpl implements MemberService {
 		//회원 조회하기(전체) - 사서
 		@Override
 		public List<MemberDto> memberSearchList(HttpServletRequest req) throws Exception {  //테스트 통과 ok
-			HttpSession session = 
-			if(role.equals("ROLE_MEMBER")) 
+			if(req.equals("ROLE_MEMBER")) 
 				return dao.select();
 			return null; 
 		}
