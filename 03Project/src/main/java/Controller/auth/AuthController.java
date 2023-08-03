@@ -1,8 +1,9 @@
-package Controller;
+package Controller.auth;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import Controller.SubController;
 import Domain.Service.AuthService;
 import Domain.Service.AuthServiceImpl;
 import Domain.Service.Session;

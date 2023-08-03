@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import Controller.auth.LoginController;
 import Controller.auth.LogoutController;
 import Controller.member.MemberAddController;
+import Controller.member.MemberController;
 import Controller.member.MemberDeleteController;
 import Controller.member.MemberSearchController;
 import Controller.member.MemberUpdateController;
@@ -62,7 +63,8 @@ public class FrontController extends HttpServlet {
 		map.put(projectPath+"/main.do", new MainController());
 		
 		//user
-		map.put(projectPath+"/user.do", new UserController()); 
+		map.put(projectPath+"/user.do", new UserController());
+		map.put(projectPath+"/member.do", new MemberController()); 
 		
 		
 	}

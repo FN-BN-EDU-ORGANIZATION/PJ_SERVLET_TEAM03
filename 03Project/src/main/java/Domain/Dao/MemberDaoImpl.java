@@ -22,13 +22,15 @@ public class MemberDaoImpl extends ConnectionPool implements MemberDao {
 	@Override
 	public int insert(MemberDto dto) throws Exception{  //테스트 구동 ok
 //		MemberDto dto = (MemberDto)Tmpdto;
-		pstmt=conn.prepareStatement("insert into tbl_member values(?,?,?,?,?,?)");
+		pstmt=conn.prepareStatement("insert into tbl_member values(?,?,?,?,?,?,?,?)");
 		pstmt.setString(1, dto.getId());
 		pstmt.setString(2, dto.getPw());
 		pstmt.setString(3, dto.getUsername());
-		pstmt.setString(4, dto.getAddr());
-		pstmt.setString(5, dto.getPhone());
-		pstmt.setString(6, dto.getRole());
+		pstmt.setString(4, dto.getBirth());
+		pstmt.setString(5, dto.getGender());
+		pstmt.setString(6, dto.getAddr());
+		pstmt.setString(7, dto.getPhone());
+		pstmt.setString(8, dto.getRole());
 		int result=pstmt.executeUpdate();
 		pstmt.close();
 		return result;
@@ -47,6 +49,8 @@ public class MemberDaoImpl extends ConnectionPool implements MemberDao {
 				dto.setId(rs.getString("id"));
 				dto.setPw(rs.getString("pw"));
 				dto.setUsername(rs.getString("username"));
+				dto.setBirth(rs.getString("birth"));
+				dto.setGender(rs.getString("gender"));
 				dto.setAddr(rs.getString("addr"));
 				dto.setPhone(rs.getString("phone"));
 				dto.setRole(rs.getString("role"));
@@ -69,6 +73,8 @@ public class MemberDaoImpl extends ConnectionPool implements MemberDao {
 				dto.setId(rs.getString("id"));
 				dto.setPw(rs.getString("pw"));
 				dto.setUsername(rs.getString("username"));
+				dto.setBirth(rs.getString("birth"));
+				dto.setGender(rs.getString("gender"));
 				dto.setAddr(rs.getString("addr"));
 				dto.setPhone(rs.getString("phone"));
 				dto.setRole(rs.getString("role"));
@@ -80,13 +86,15 @@ public class MemberDaoImpl extends ConnectionPool implements MemberDao {
 	@Override
 	public int update(MemberDto dto) throws Exception{  //테스트 구동 ok
 //		MemberDto dto = (MemberDto)Tdto;
-		pstmt=conn.prepareStatement("update tbl_member set pw=?,username=?,addr=?,phone=?,role=? where id=?");
+		pstmt=conn.prepareStatement("update tbl_member set pw=?,username=?,birth=?,gender=?,addr=?,phone=?,role=? where id=?");
 		pstmt.setString(1,dto.getPw() );
 		pstmt.setString(2,dto.getUsername() );
-		pstmt.setString(3,dto.getAddr());
-		pstmt.setString(4,dto.getPhone() );
-		pstmt.setString(5,dto.getRole() );
-		pstmt.setString(6,dto.getId() );
+		pstmt.setString(3,dto.getBirth() );
+		pstmt.setString(4,dto.getGender() );
+		pstmt.setString(5,dto.getAddr());
+		pstmt.setString(6,dto.getPhone() );
+		pstmt.setString(7,dto.getRole() );
+		pstmt.setString(8,dto.getId() );
 		int result=pstmt.executeUpdate();
 		pstmt.close();
 		return result;

@@ -207,12 +207,50 @@
             <button class="delete-btn">탈퇴</button>
         </div>
     </div>
-    <!-- 회원 정보 조회 -->
+ <!-- 회원 정보 조회 -->
     <div class="userSearch">
-        <div>
-                
+        <!-- 상단 글 -->
+        <p class="head">[관리자] 회원 조회</p>
+        <!-- 검색 라인 -->
+        <div class="search-block">
+            <!-- form 필요 -->
+                <ul class="search-line">
+                    <li>
+                        <select name="" id="">
+                        <option value="">회원 ID</option>
+                        <option value="">회원 이름</option>
+                        <option value="">전화번호</option>
+                        </select>
+                    </li>
+                    <li><input type="text" placeholder="아직 전체조회만"></li>
+                    <li><button class="search-commit">검색</button></li>
+                </ul>
         </div>
-    </div>
+        <!-- 결과창 -->
+      <div class="search-result">
+          <p class="page">????</p>
+          <div class="result-block">
+              <!-- 결과 테이블 -->
+              <table class="result-line">
+                  <thead>
+                  <tr>
+                      <th>회원 ID</th>
+                      <th>회원 이름</th>
+                      <th>나이</th>
+                      <th>성별</th>
+                      <th>생년월일</th>
+                      <th>전화번호</th>
+                      <th>주소</th>
+                  </tr>
+                  </thead>
+              </table>
+          </div>
+          <!-- 패깅? 버튼 -->
+              <div class="paging">
+                  <button class="paging-btn">뭔가 버튼</button>
+              </div>
+          </div>
+      </div>
 </div>
 
 <!-- 푸터 -->
